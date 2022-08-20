@@ -1,6 +1,11 @@
+import Layout from "../components/layout";
+
 export default function mentions_legales() {
     return (
-        <>
+        <Layout
+            pageTitle="Mentions légales"
+            pageDescription="Mentions légales du site www.florent-vandroy.fr/"
+        >
             <h1 className="text-primary">Mentions légales</h1>
             <ul className="list-disc">
                 <li>Raison sociale : Florent VANDROY</li>
@@ -13,6 +18,6 @@ export default function mentions_legales() {
                 <li>Responsable de la publication : VANDROY Florent</li>
                 <li>Hébergeur : Netlify – 610 22nd Street, Suite 315 CA 94107 San Francisco +1 844-899-7312</li>
             </ul>
-        </>
+        </Layout>
     )
 }

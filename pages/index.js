@@ -1,19 +1,20 @@
 import Post from "../components/post"
 import Project from "../components/project"
 import Contact from "../components/contact"
+import Layout from "../components/layout"
 
 import fs from 'fs'
 import matter from 'gray-matter'
 import Link from "next/link"
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCode, faChartLine, faMobileAlt } from "@fortawesome/free-solid-svg-icons";
+import { faCode, faChartLine, faMobileAlt, faMobile } from "@fortawesome/free-solid-svg-icons";
 import { sortByDate } from "../utils/sortByDate";
 
-export default function Home({ posts, projects }) {
+export default function Home({ services, posts, projects }) {
 
   return (
-    <>
+    <Layout>
       <section>
         <p className="text-3xl">Hey, je suis Florent !</p>
         <h1>Développeur web full stack freelance <br />à Bergerac (Dordogne)</h1>
@@ -30,27 +31,15 @@ export default function Home({ posts, projects }) {
       <section>
         <h2>Mes services.</h2>
         <div className="grid lg:grid-cols-3 grid-cols-1 gap-4">
-          <div className="service">
-            <FontAwesomeIcon icon={faCode} size="2x" aria-label="Illustration code" />
-            <h3>Création de site internet</h3>
-            <p>
-              Site internet développé avec Wordpress ou Laravel selon les besoins.
-            </p>
-          </div>
-          <div className="service">
-            <FontAwesomeIcon icon={faChartLine} size="2x" aria-label="Illustration référencement naturel" />
-            <h3>Référencement naturel</h3>
-            <p>
-              Le site respecte les bonnes pratiques du web et est optimisé afin d&apos;améliorer le référencement naturel.
-            </p>
-          </div>
-          <div className="service">
-            <FontAwesomeIcon icon={faMobileAlt} size="2x" aria-label="Illustration responsive design" />
-            <h3>Responsive design</h3>
-            <p>
-              Le site internet s&apos;adapte à tous les types d&apos;écran (mobile, tablette et ordinateur).
-            </p>
-          </div>
+          {services.map((service) => 
+            <div className="service" key={service.title}>
+              <FontAwesomeIcon icon={service.icon} size="2x" aria-label="Illustration code" />
+              <h3>{service.title}</h3>
+              <p>
+                {service.content}
+              </p>
+            </div> 
+          )}
         </div>
       </section>
       <section>
@@ -92,7 +81,7 @@ export default function Home({ posts, projects }) {
         </p>
         <Contact />
       </section>
-    </>
+    </Layout>
   )
 }
 
@@ -124,10 +113,16 @@ export async function getStaticProps(){
     };
   });
 
+  const services = [
+    {'icon': faMobileAlt, 'title': 'Responsive Design', 'content': 'Le site internet s\'adapte à tous les types d\'écran (mobile, tablette et ordinateur).'},
+    {'icon': faChartLine, 'title': 'Référencement Naturel', 'content': 'Le site respecte les bonnes pratiques du web et est optimisé afin d\'améliorer le référencement naturel.'},
+    {'icon': faCode, 'title': 'Création de site internet', 'content': 'Site internet développé avec Wordpress ou Laravel/React selon les besoins.'}
+  ]
   return {
       props: {
+        services,
         posts: posts.sort(sortByDate).slice(0, 3),
-        projects : projects.sort(sortByDate).slice(0, 3)
+        projects : projects.sort(sortByDate).slice(0, 3),
       },
   };
 }

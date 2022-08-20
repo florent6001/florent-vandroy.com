@@ -1,4 +1,5 @@
 import Project from "../components/project";
+import Layout from "../components/layout";
 import { sortByDate } from "../utils/sortByDate";
 
 import fs from 'fs'
@@ -6,7 +7,10 @@ import matter from "gray-matter";
 
 export default function realisations({ projects }) {
     return (
-        <>
+        <Layout 
+            pageTitle="Mes réalisations"
+            pageDescription="Liste des sites sur lesquels j'ai travaillé. Visite et/ou code source à disposition."
+            >
             <h1>Mes réalisations</h1>
             <div className="grid lg:grid-cols-3 grid-cols-1 gap-4">
                 {projects.map((project, index) => {
@@ -15,7 +19,7 @@ export default function realisations({ projects }) {
                     )
                 })}
             </div>
-        </>
+        </Layout>
     )
 }
 

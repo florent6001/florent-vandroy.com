@@ -1,19 +1,23 @@
 import fs from 'fs'
 import matter from 'gray-matter';
 
+import Layout from "../../components/layout"
 import Post from '../../components/post'
 import { sortByDate } from '../../utils/sortByDate';
 
 export default function blog({ posts }) {
     return (
-        <>
+        <Layout
+            pageTitle='Blog'
+            pageDescription="Blog de florent-vandroy.fr, article parlant de développement web, partage et retour d'expérience sur les nouvelles technologies."
+        >
             <h1>Blog</h1>
             {posts.map((post) => {
                 return (
                     <Post post={post}  key={post.slug} />
                 )
             })}
-        </>
+        </Layout>
     )
 }
 
