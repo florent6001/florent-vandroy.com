@@ -18,6 +18,9 @@ function generateSiteMap(posts) {
             <loc>${`${base_url}realisations`}</loc>
         </url>
         <url>
+            <loc>${`${base_url}contact`}</loc>
+        </url>
+        <url>
             <loc>${`${base_url}blog`}</loc>
         </url>
         ${posts

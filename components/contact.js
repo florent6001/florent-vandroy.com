@@ -4,9 +4,9 @@ import {useState} from 'react'
 export default function Contact() {
     const [formStatus, setFormStatus] = useState(false);
     const [query, setQuery] = useState({
-        name: "",
-        email: "",
-        message: ""
+        name: "Florent Vandroy",
+        email: "florentvandroy@gmail.com",
+        message: "Mon super message"
     });
 
     const handleChange = () => (e) => {
@@ -20,6 +20,9 @@ export default function Contact() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        let button = document.getElementById('submit-btn')
+        button.innerHTML = 'Envoi en cours...'
+        button.disabled = true
         const formData = new FormData();
         Object.entries(query).forEach(([key, value]) => {
             formData.append(key, value);
@@ -29,7 +32,7 @@ export default function Contact() {
             .post(
                 "https://getform.io/f/ca842a0d-f870-467b-8044-5280e396239f",
                 formData,
-                {headers: {Accept: "application/json"}}
+                {headers: {"Content-Type": "application/x-www-form-urlencoded"}}
             )
             .then(function (response) {
                 setFormStatus(true);
@@ -39,9 +42,13 @@ export default function Contact() {
                     message: ""
                 });
                 console.log(response);
+                button.innerHTML = 'Envoyer mon message'
+                button.disabled = false
             })
             .catch(function (error) {
                 console.log(error);
+                button.innerHTML = 'Envoyer mon message'
+                button.disabled = false
             });
     }
 
@@ -86,12 +93,11 @@ export default function Contact() {
 
             {formStatus ? (
                 <div className="text-success mb-2">
-                    Your message has been sent.
+                    Votre message a été envoyé avec succès.
                 </div>
             ) : (
-                ""
+                <button type="submit" className="mt-10 bg-primary px-5 py-3 hover:no-underline text-black text-sm uppercase font-bold rounded inline-block mr-5" id='submit-btn'>Envoyer mon message</button>
             )}
-            <button type="submit" className="mt-10 bg-primary px-5 py-3 hover:no-underline text-black text-sm uppercase font-bold rounded inline-block mr-5">Envoyer mon message</button>
         </form>
     );
 }
