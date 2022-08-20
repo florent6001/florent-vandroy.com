@@ -1,0 +1,10 @@
+- Page title
+- Meta description
+- favicon
+- microdata
+- sitemap
+- robots.txt
+- Rajouter contenu homepage
+- apple touch icon
+- Bannière de cookie
+- Google Analytics

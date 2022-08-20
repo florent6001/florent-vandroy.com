@@ -1,0 +1,7 @@
+footer .flex div{
+    @apply w-full;
+}
+
+footer a:hover {
+    @apply underline;
+}

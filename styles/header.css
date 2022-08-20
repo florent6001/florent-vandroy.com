@@ -1,0 +1,19 @@
+nav {
+    @apply w-fit;
+}
+
+header {
+    @apply mb-10;
+}
+  
+nav li {
+    @apply text-white mx-3 lg:py-3 pt-5 pb-0 uppercase border-b border-transparent lg:hover:border-primary;
+}
+
+nav li:last-child {
+    @apply mr-0;
+}
+
+nav li:hover {
+    transition: border-bottom 1s;
+}

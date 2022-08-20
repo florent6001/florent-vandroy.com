@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&family=Roboto&display=swap');
+@import url('./header.css');
+@import url('./footer.css');
+
+/* Typography */
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'DM Sans', sans-serif;
+  @apply font-bold py-10;
+}
+  
+h1 {
+  @apply text-5xl;
+}
+
+h2 { 
+  @apply text-4xl text-primary;
+}
+
+h3 { 
+  @apply text-3xl;
+}
+
+h4 {
+  @apply text-2xl;
+}
+
+h5 {
+  @apply text-xl;
+}
+
+h6 {
+  @apply text-lg;
+}
+
+/* Globals */
+
+body {
+  @apply bg-body text-white;
+}
+
+main a {
+  @apply text-primary hover:underline;
+}
+
+section {
+  @apply py-10;
+}
+
+.service {
+  @apply w-full border border-gray-800 p-10 text-center transition duration-700 hover:bg-primary hover:border-primary;
+}
