@@ -4,9 +4,9 @@ import {useState} from 'react'
 export default function Contact() {
     const [formStatus, setFormStatus] = useState(false);
     const [query, setQuery] = useState({
-        name: "Florent Vandroy",
-        email: "florentvandroy@gmail.com",
-        message: "Mon super message"
+        name: "",
+        email: "",
+        message: ""
     });
 
     const handleChange = () => (e) => {
