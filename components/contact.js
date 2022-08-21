@@ -96,7 +96,7 @@ export default function Contact() {
                     Votre message a été envoyé avec succès.
                 </div>
             ) : (
-                <button type="submit" className="mt-10 bg-primary px-5 py-3 hover:no-underline text-black text-sm uppercase font-bold rounded inline-block mr-5 hover:bg-green-300" id='submit-btn'>Envoyer mon message</button>
+                <button type="submit" className="btn btn-primary" id='submit-btn'>Envoyer mon message</button>
             )}
         </form>
     );
