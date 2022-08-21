@@ -43,8 +43,8 @@ function SiteMap() {
 export async function getServerSideProps({ res }) {
 
     const sitemap = []
-    fs.readdirSync('blog').map((fileName) => {
-        sitemap.push(fileName.replace('.md', ''));
+    fs.readdirSync('pages/blog').map((fileName) => {
+        sitemap.push(fileName.replace('.md', '').replace('.js', ''));
     });
 
     const result = generateSiteMap(sitemap);
