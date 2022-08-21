@@ -102,7 +102,7 @@ export default function Cookies() {
                     <div className="max-w-6xl mx-auto px-5">
                         <p className="text-3xl text-primary py-5">Ce site internet utilise des cookies.</p>
                         <p>
-                            Nous utilisons les cookies pour améliorer le fonctionnement du site, mais également pour voir comment vous interagissez avec celui-ci. Nous utiliserons les cookies uniquement si vous nous le permettez en cliquant sur "Accepter les cookies". Vous pouvez également choisir quel cookie vous souhaitez autoriser.
+                            Nous utilisons les cookies pour améliorer le fonctionnement du site, mais également pour voir comment vous interagissez avec celui-ci. Nous utiliserons les cookies uniquement si vous nous le permettez en cliquant sur &ldquo;Accepter les cookies&ldquo;. Vous pouvez également choisir quel cookie vous souhaitez autoriser.
                         </p>
                         <div id="personalize-cookies" className="hidden">
                             <div className="lg:grid grid-cols-2 gap-5 lg:pt-10
