@@ -6,9 +6,9 @@ export default function custom404() {
             <h1>Erreur 404</h1>
             <hr />
             <p className="py-10">
-                La page a laquelle vous essayez d'accéder n'existe pas.
+                La page a laquelle vous essayez d&apos;accéder n&apos;existe pas.
             </p>
-            <button className="text-sm bg-primary px-5 py-3 hover:no-underline text-black uppercase font-bold rounded inline-block mr-5 hover:bg-green-300">Se rendre sur la page d'accueil</button>
+            <button className="text-sm bg-primary px-5 py-3 hover:no-underline text-black uppercase font-bold rounded inline-block mr-5 hover:bg-green-300">Se rendre sur la page d&apos;accueil</button>
         </Layout>
     )
 }
