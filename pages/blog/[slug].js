@@ -9,9 +9,11 @@ export default function PostPage({ frontmatter, content, date }) {
       <Layout pageTitle={frontmatter.title}
         pageDescription={content.replace(/#/g, '').slice(0, 200)}
         >
-        <h1 className="text-center pb-4">{frontmatter.title}</h1>
-        <p className="text-center text-lg">Mis en ligne le {date}.</p>
-        <div dangerouslySetInnerHTML={{ __html: md().render(content) }} className="mt-10" />
+          <div itemScope itemType="https://schema.org/BlogPosting">
+            <h1 className="text-center pb-4" itemProp='Headline'>{frontmatter.title}</h1>
+            <p className="text-center text-lg">Mis en ligne le <span itemProp='dateCreated'>{date}</span>.</p>
+            <div itemProp='articleBody' dangerouslySetInnerHTML={{ __html: md().render(content) }} className="mt-10" />
+          </div>
       </Layout>
     );
   }

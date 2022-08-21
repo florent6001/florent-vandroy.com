@@ -24,18 +24,18 @@ export default function Home({ services, posts, projects }) {
           Ce site sert également à vous partagez mes retours d&apos;expérience sur mon <Link href="/blog"><a className="font-bold">blog</a></Link>.
         </p>
         <div className="pt-10">
-          <Link href="/contact"><a className="text-sm bg-primary px-5 py-3 hover:no-underline text-black uppercase font-bold rounded inline-block mr-5">Me contacter</a></Link>
-          <Link href="/realisations"><a className="text-sm bg-secondary px-5 py-3 hover:no-underline text-white uppercase font-bold rounded inline-block">Voir mes réalisations</a></Link>
+          <Link href="/contact"><a className="text-sm bg-primary px-5 py-3 hover:no-underline text-black uppercase font-bold rounded inline-block mr-5 hover:bg-green-300">Me contacter</a></Link>
+          <Link href="/realisations"><a className="text-sm bg-secondary px-5 py-3 hover:no-underline text-white uppercase font-bold rounded inline-block hover:bg-gray-600">Voir mes réalisations</a></Link>
         </div>
       </section>
       <section>
         <h2>Mes services.</h2>
         <div className="grid lg:grid-cols-3 grid-cols-1 gap-4">
           {services.map((service) => 
-            <div className="service" key={service.title}>
+            <div className="service" key={service.title} itemScope itemType="https://schema.org/Service">
               <FontAwesomeIcon icon={service.icon} size="2x" aria-label="Illustration code" />
-              <h3>{service.title}</h3>
-              <p>
+              <h3 itemProp="name">{service.title}</h3>
+              <p itemProp="description">
                 {service.content}
               </p>
             </div> 

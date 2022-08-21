@@ -1,4 +1,3 @@
-- microdata
 - Rajouter contenu homepage
 - Bannière de cookie
 - Google Analytics
