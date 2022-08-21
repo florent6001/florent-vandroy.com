@@ -1,4 +1,9 @@
+# *
 User-agent: *
 Allow: /
-Sitemap: https://www.florent-vandroy.fr/sitemap.xml
+
+# Host
 Host: https://www.florent-vandroy.fr
+
+# Sitemaps
+Sitemap: https://www.florent-vandroy.fr/sitemap.xml
