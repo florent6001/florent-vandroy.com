@@ -1,6 +1,6 @@
 import fs from 'fs'
 
-const base_url = 'https://florent-vandroy.fr/'
+const base_url = 'https://www.florent-vandroy.fr/'
 
 function generateSiteMap(posts) {
   return `<?xml version="1.0" encoding="UTF-8"?>
@@ -43,8 +43,7 @@ function SiteMap() {
 export async function getServerSideProps({ res }) {
 
     const sitemap = []
-
-    const posts = fs.readdirSync('posts').map((fileName) => {
+    fs.readdirSync('posts').map((fileName) => {
         sitemap.push(fileName.replace('.md', ''));
     });
 
