@@ -10,27 +10,6 @@ import Link from "next/link"
 export default function Header() {
 
     const router = useRouter()
-
-    const pageview = (url) => {
-        window.gtag('config', 'UA-123751778-1', {
-          page_path: url,
-        })
-    }
-
-    useEffect(() => {
-        const navbar = document.getElementById("navbar")
-        const handleRouteChange = (url) => {
-            navbar.classList.remove('fixed')
-            navbar.classList.add('hidden')
-            pageview(url)
-        }
-    
-        router.events.on('routeChangeStart', handleRouteChange)
-    
-        return () => {
-            router.events.off('routeChangeStart', handleRouteChange)
-        }
-    })
     
     const toggleNavBar = () => {
         const navbar = document.getElementById("navbar")
