@@ -1,17 +1,10 @@
 import Head from "next/head"
-import { useEffect, useState } from "react"
+import { useCallback, useEffect, useState } from "react"
 import Script from "next/script"
 
 export default function Cookies() {
-    const [displayCookies, setDisplayCookies] = useState(false)
     const [acceptedCookies, setAcceptedCookies] = useState([])
-
-    useEffect(() => {
-        setDisplayCookies(document.cookie.indexOf('cookies_displayed') == -1)
-
-        if(!displayCookies)
-            injectCookies()
-    }, [displayCookies])
+    const [displayCookies, setDisplayCookies] = useState()
 
     var now = new Date();
     var time = now.getTime();
@@ -41,59 +34,44 @@ export default function Cookies() {
     }
 
     const acceptCookies = () => {
-        document.cookie = `cookies_displayed=true;expires=${cookieExpiration}`
         cookies.map((cookie) => {
             document.cookie = `${cookie.name}=true;expires=${cookieExpiration}`
         })
-        disableCookies()
-        injectCookies()
+        setDisplayCookies(false)
     }
 
     const denyCookies = () => {
-        cookies.map((cookie) => {
-            if(cookie.required)
-                document.cookie = `${cookie.name}=true;expires=${cookieExpiration}`
-            else
-                document.cookie = `${cookie.name}=false;expires=${cookieExpiration}`
-        })
-        disableCookies()
-        injectCookies()
+        document.cookie = `essentiel=true;expires=${cookieExpiration}`
+        setDisplayCookies(false)
     }
 
     const acceptPersonalizedCookies = () => {
         cookies.map((cookie) => {
             let input = document.getElementById(cookie.name)
-            if(input.checked)
+            if(input.checked) {
                 document.cookie = `${cookie.name}=true;expires=${cookieExpiration}`
-            else
-                document.cookie = `${cookie.name}=false;expires=${cookieExpiration}`
+            }
         })
-        disableCookies()
-        injectCookies()
-    }
-
-    const disableCookies = () => {
         setDisplayCookies(false)
-        injectCookies()
-        document.cookie = `cookies_displayed=true;expires=${cookieExpiration}`
     }
 
-    const injectCookies = () => {
+    useEffect(() => {
+        setDisplayCookies(document.cookie.indexOf('essentiel') == -1 ? true : false)
+    }, [])
+
+    useEffect(() => {
         let acceptedCookies = []
         document.cookie.replace(/\s/g, '').split(';').map((element) => {
             let cookie_name = element.split('=')[0]
             let cookie_value = element.split('=')[1]
 
             if(cookie_value == 'true') {
-                let cookie = cookies.find(cookie => cookie.name == cookie_name)
-                if(cookie) {
-                    acceptedCookies.push(cookie.name)
-                }
+                acceptedCookies.push(cookie_name)
             }
         })
         setAcceptedCookies(acceptedCookies)
-    }
-
+        
+    }, [displayCookies])
 
     return (
         <>
