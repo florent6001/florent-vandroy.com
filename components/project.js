@@ -1,13 +1,16 @@
 import Link from "next/link";
 import md from 'markdown-it';
+import Image from "next/image";
 
 export default function project({ project }) {
     return (
         <div className="w-full h-full border border-gray-800 text-center transition duration-700 hover:bg-gray-800 project" itemScope itemType="https://schema.org/WebSite">
-            <div className="w-full h-fit">
-                <img src={`/images/projects/${project.name}.jpg`} className="object-cover w-full h-full transition-all duration-500" alt={`Capture d'écran du site ${project.frontmatter.title}`} />
+            <div className="block">
+                <div className="relative max-h-full w-full top-0 left-0">
+                    <Image src={`/images/projects/${project.name}.jpg`} layout="responsive" objectPosition={'top left'} objectFit="cover" height={'100%'} width={'100%'} className="transition-all duration-500 w-full" alt={`Capture d'écran du site ${project.frontmatter.title}`} />
+                </div>
             </div>
-            <div className="p-10 pt-5">
+            <div className="p-10">
                 <h3 className="font-normal py-0 text-primary mb-10" itemProp="name">{project.frontmatter.title}</h3>
                 <div className="w-full text-center">
                     {project.frontmatter.demo && ( 
