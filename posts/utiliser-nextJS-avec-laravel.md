@@ -6,13 +6,13 @@ title: "Utiliser nextJS avec Laravel"
 ## Introduction
 
 Nous entendons parler de plus en plus de développement avec une API back-end ([Laravel](https://laravel.com/), [Symfony](https://symfony.com/), [ExpressJS](https://expressjs.com/fr/)), et un front-end séparé (avec [NextJS](https://nextjs.org/), [NuxtJS](https://nuxtjs.org/), [Gatsby](https://www.gatsbyjs.com/), ...).
-A première vue, séparer le back-end et le front-end peuvent faire peur et parraître compliqué.
-Le simple fait de créer un système de login / register parraît être un véritable calvaire, il faut placer le token dans les entêtes, gérer les accès réservé au membre, ..
-Laravel a sortie [Laravel Breeze](https://laravel.com/docs/9.x/starter-kits) il y a quelques temps maintenant, permettant de générer une application de base pour démarrer son projet (Système d'authentication, mot de passe oublié, ..)
+A première vue, séparer le back-end et le front-end peut faire peur et paraître compliqué.
+Le simple fait de créer un système de login / register paraît être un véritable calvaire, il faut placer le token dans les entêtes, gérer les accès réservé au membre, ..
+Laravel a sortie [Laravel Breeze](https://laravel.com/docs/9.x/starter-kits) il y a quelques temps maintenant, permettant de générer une application de base pour démarrer son projet (Système d'authentification, mot de passe oublié, ..)
 
 ## L'apparition de breeze-next.
 
-Bien qu'il n'y ai actuellement que très peu de vidéo sur le sujet sur Youtube, [Laravel Breeze](https://laravel.com/docs/9.x/starter-kits) propose un starter avec nextJS, que vous trouverez sur ce dépot Github : [laravel/breeze-next](https://github.com/laravel/breeze-next). Ce repository, vous permettra de clôner une application NextJS comportant exactement la même chose que Breeze pour la version Laravel.
+Bien qu'il n'y ai actuellement que très peu de vidéo sur le sujet sur Youtube, [Laravel Breeze](https://laravel.com/docs/9.x/starter-kits) propose un starter avec nextJS, que vous trouverez sur ce dépôt Github : [laravel/breeze-next](https://github.com/laravel/breeze-next). Ce repository, vous permettra de clôner une application NextJS comportant exactement la même chose que Breeze pour la version Laravel.
 
 Vous aurez donc une application NextJS utilisant le template de Breeze (avec [TailwindCSS](https://tailwindcss.com/)) comportant les mêmes fonctionnalité (Authentication, mot de passe oublié, ..)
 

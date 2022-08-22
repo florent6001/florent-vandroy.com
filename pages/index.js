@@ -3,9 +3,12 @@ import Project from "../components/project"
 import Contact from "../components/contact"
 import Layout from "../components/layout"
 
+import florent_vandroy from "../public/images/florent-vandroy.png"
+
 import fs from 'fs'
 import matter from 'gray-matter'
 import Link from "next/link"
+import Image from "next/image"
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCode, faChartLine, faMobileAlt, faMobile } from "@fortawesome/free-solid-svg-icons";
@@ -28,6 +31,22 @@ export default function Home({ services, posts, projects }) {
         </div>
       </section>
       <section>
+        <div className="flex justify-center items-center flex-col-reverse lg:flex-row">
+          <div className="w-full lg:w-2/3">
+            <h2 className="lg:pt-0">A propos de moi</h2>
+            <p className="text-xl">
+              Passionnée par le développement et geek depuis mon adolescence, j'ai commencé par passer un <Link href="https://www.greta-npdc.fr/formation/bep-systemes-electroniques-numeriques/"><a rel="nofollow" title="Voir les détails du diplôme">BEP SEN (Système Électronique et Numérique)</a></Link> avant d'intégrer <Link href="https://www.la-wab.fr/"><a rel="nofollow" title="Aller sur le site de la wab">La WAB</a></Link> pour une initiation au métiers du web (graphismes, développement, marketing, ..) d'une durée de six mois. <br /><br />
+              La formation étant très bénéfique pour moi, je suis resté à la WAB pour effectuer une alternance de deux ans et ainsi obtenir un <Link href="https://www.francecompetences.fr/recherche/rncp/26602/"><a title="En savoir plus sur le titre professionnel" rel="nofollow">titre professionnel WebDesigner</a></Link>.
+              Pendant ses deux ans d'alternance, j'ai eu la chance de pouvoir travaillé au service pôle internet du <Link href="https://www.credit-agricole.fr/ca-charente-perigord/particulier.html"><a title="Visiter le site du crédit agricole charente-perigord" rel="nofollow">Crédit Agricole Charente-Périgord</a></Link>. <br /><br />
+              Toujours aussi passionné qu'au début, je continue d'apprendre chaque jours de nouvelles technologies et propose mes services de développeur fullstack en tant que freelance.
+            </p>
+          </div>
+          <div className="relative right-0 w-full lg:w-1/3 text-center">
+            <Image src={florent_vandroy} objectPosition={'center'} />
+          </div>
+        </div>
+      </section>
+      <section>
         <h2>Mes services.</h2>
         <div className="grid lg:grid-cols-3 grid-cols-1 gap-4">
           {services.map((service) => 
@@ -39,6 +58,23 @@ export default function Home({ services, posts, projects }) {
               </p>
             </div> 
           )}
+        </div>
+      </section>
+      <section>
+        <div className="flex justify-between items-center pb-10">
+          <h2 className="py-0">Mes derniers projets.</h2>
+          <Link href="/realisations">
+            <a title="Se rendre sur la page des projets" className="text-right">
+              Voir plus de projets
+            </a>
+          </Link>
+        </div>
+        <div className="grid lg:grid-cols-3 grid-cols-1 gap-4">
+          {projects.map((project, index) => {
+            return (
+              <Project project={project} key={index} />
+            )
+          })}
         </div>
       </section>
       <section>
@@ -55,23 +91,6 @@ export default function Home({ services, posts, projects }) {
             <Post post={post} key={post.slug} />
           )
         })}
-      </section>
-      <section>
-      <div className="flex justify-between items-center pb-10">
-          <h2 className="py-0">Mes derniers projets.</h2>
-          <Link href="/realisations">
-            <a title="Se rendre sur la page des projets" className="text-right">
-              Voir plus de projets
-            </a>
-          </Link>
-        </div>
-        <div className="grid lg:grid-cols-3 grid-cols-1 gap-4">
-          {projects.map((project, index) => {
-            return (
-              <Project project={project} key={index} />
-            )
-          })}
-        </div>
       </section>
       <section>
         <h2>Me contacter.</h2>

@@ -72,7 +72,7 @@ section {
 }
 
 pre, code {
-  @apply max-w-full overflow-x-scroll pt-5;
+  @apply max-w-full overflow-x-scroll py-5;
 }
 
 .project:hover img {

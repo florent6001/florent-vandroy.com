@@ -4,7 +4,6 @@ import Image from "next/image"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBars, faClose } from "@fortawesome/free-solid-svg-icons"
 import { useRouter } from "next/router"
-import { useEffect } from "react"
 import Link from "next/link"
 
 export default function Header() {
