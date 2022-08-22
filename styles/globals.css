@@ -70,3 +70,7 @@ section {
 .btn-secondary {
   @apply bg-secondary hover:bg-gray-600 text-white;
 }
+
+pre, code {
+  @apply max-w-full overflow-x-scroll pt-5;
+}
