@@ -35,14 +35,14 @@ export default function Home({ services, posts, projects }) {
           <div className="w-full lg:w-2/3">
             <h2 className="lg:pt-0">A propos de moi</h2>
             <p className="text-xl">
-              Passionnée par le développement et geek depuis mon adolescence, j'ai commencé par passer un <Link href="https://www.greta-npdc.fr/formation/bep-systemes-electroniques-numeriques/"><a rel="nofollow" title="Voir les détails du diplôme">BEP SEN (Système Électronique et Numérique)</a></Link> avant d'intégrer <Link href="https://www.la-wab.fr/"><a rel="nofollow" title="Aller sur le site de la wab">La WAB</a></Link> pour une initiation au métiers du web (graphismes, développement, marketing, ..) d'une durée de six mois. <br /><br />
+              Passionnée par le développement et geek depuis mon adolescence, j&apos;ai commencé par passer un <Link href="https://www.greta-npdc.fr/formation/bep-systemes-electroniques-numeriques/"><a rel="nofollow" title="Voir les détails du diplôme">BEP SEN (Système Électronique et Numérique)</a></Link> avant d&apos;intégrer <Link href="https://www.la-wab.fr/"><a rel="nofollow" title="Aller sur le site de la wab">La WAB</a></Link> pour une initiation au métiers du web (graphismes, développement, marketing, ..) d&apos;une durée de six mois. <br /><br />
               La formation étant très bénéfique pour moi, je suis resté à la WAB pour effectuer une alternance de deux ans et ainsi obtenir un <Link href="https://www.francecompetences.fr/recherche/rncp/26602/"><a title="En savoir plus sur le titre professionnel" rel="nofollow">titre professionnel WebDesigner</a></Link>.
-              Pendant ses deux ans d'alternance, j'ai eu la chance de pouvoir travaillé au service pôle internet du <Link href="https://www.credit-agricole.fr/ca-charente-perigord/particulier.html"><a title="Visiter le site du crédit agricole charente-perigord" rel="nofollow">Crédit Agricole Charente-Périgord</a></Link>. <br /><br />
-              Toujours aussi passionné qu'au début, je continue d'apprendre chaque jours de nouvelles technologies et propose mes services de développeur fullstack en tant que freelance.
+              Pendant ses deux ans d&apos;alternance, j&apos;ai eu la chance de pouvoir travaillé au service pôle internet du <Link href="https://www.credit-agricole.fr/ca-charente-perigord/particulier.html"><a title="Visiter le site du crédit agricole charente-perigord" rel="nofollow">Crédit Agricole Charente-Périgord</a></Link>. <br /><br />
+              Toujours aussi passionné qu&apos;au début, je continue d&apos;apprendre chaque jours de nouvelles technologies et propose mes services de développeur fullstack en tant que freelance.
             </p>
           </div>
           <div className="relative right-0 w-full lg:w-1/3 text-center">
-            <Image src={florent_vandroy} objectPosition={'center'} />
+            <Image src={florent_vandroy} objectPosition={'center'} alt="Photo de Florent Vandroy" />
           </div>
         </div>
       </section>
