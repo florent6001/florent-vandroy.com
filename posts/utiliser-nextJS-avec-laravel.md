@@ -7,7 +7,7 @@ title: "Utiliser nextJS avec Laravel"
 
 Nous entendons parler de plus en plus de développement avec une API back-end ([Laravel](https://laravel.com/), [Symfony](https://symfony.com/), [ExpressJS](https://expressjs.com/fr/)), et un front-end séparé (avec [NextJS](https://nextjs.org/), [NuxtJS](https://nuxtjs.org/), [Gatsby](https://www.gatsbyjs.com/), ...).
 A première vue, séparer le back-end et le front-end peuvent faire peur et parraître compliqué.
-Le simple fait de créer un système de login / register parraît être un véritable calvaire, il faut placer le token dans les entêtes, gérer les accè réservé au membre, ..
+Le simple fait de créer un système de login / register parraît être un véritable calvaire, il faut placer le token dans les entêtes, gérer les accès réservé au membre, ..
 Laravel a sortie [Laravel Breeze](https://laravel.com/docs/9.x/starter-kits) il y a quelques temps maintenant, permettant de générer une application de base pour démarrer son projet (Système d'authentication, mot de passe oublié, ..)
 
 ## L'apparition de breeze-next.

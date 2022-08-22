@@ -1,3 +1,6 @@
-- Rajouter contenu homepage
-- Bannière de cookie
-- Google Analytics
+Contenu homepage :
+    [ ] Ajouter section "About Me"
+    [ ] Revoir section "mes services" avec les logos des frameworks que j'utilise
+    [ ] Section projets : Ajouter des screenshots, qui ce zoom en hover
+    [ ] Full stack dordogne non inclus dans le texte
+    [ ] Dark / Light mode

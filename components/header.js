@@ -26,7 +26,7 @@ export default function Header() {
         <header className="border-b border-primary px-5">
             <div className="max-w-6xl flex justify-between items-center mx-auto min-h-[100px]">
                 <Link href={"/"}>
-                    <a className="relative h-[40px] w-[50px]">
+                    <a className="relative h-[40px] w-[50px]" title="Se rendre sur la page d'accueil">
                         <Image src={logo} layout={'fill'} objectFit={'contain'} className="object-left" alt="Logo de Florent Vandroy" />
                     </a>
                 </Link>
@@ -38,10 +38,10 @@ export default function Header() {
                         <FontAwesomeIcon icon={faClose} size="2x" aria-label="Fermer le menu" />
                     </div>
                     <ul className="w-full flex flex-col lg:flex-row justify-end items-center pt-5 lg:pt-0">
-                        <li className={router.pathname == '/' ? 'border-primary' : ''}><Link href="/"><a>Accueil</a></Link></li>
-                        <li className={router.pathname.includes('/blog') ? 'border-primary' : ''}><Link href="/blog"><a>Blog</a></Link></li>
-                        <li className={router.pathname.includes('/realisations') ? 'border-primary' : ''}><Link href="/realisations"><a>Réalisations</a></Link></li>
-                        <li className={router.pathname.includes('/contact') ? 'border-primary' : ''}><Link href="/contact"><a>Contact</a></Link></li>
+                        <li className={router.pathname == '/' ? 'border-primary' : ''}><Link href="/"><a title="Se rendre sur la page d'accueil">Accueil</a></Link></li>
+                        <li className={router.pathname.includes('/blog') ? 'border-primary' : ''}><Link href="/blog"><a title="Se rendre sur le blog">Blog</a></Link></li>
+                        <li className={router.pathname.includes('/realisations') ? 'border-primary' : ''}><Link href="/realisations"><a title="Se rendre sur la page réalisations">Réalisations</a></Link></li>
+                        <li className={router.pathname.includes('/contact') ? 'border-primary' : ''}><Link href="/contact"><a title="Se rendre sur la page contact">Contact</a></Link></li>
                     </ul>
                 </nav>
             </div>

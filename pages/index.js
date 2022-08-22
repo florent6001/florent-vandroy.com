@@ -19,13 +19,12 @@ export default function Home({ services, posts, projects }) {
         <p className="text-3xl">Hey, je suis Florent !</p>
         <h1>Développeur web full stack freelance <br />à Bergerac (Dordogne)</h1>
         <p className="text-2xl text-secondary leading-8">
-          Je suis <strong>développeur web</strong> à <strong>Bergerac</strong>. J&apos;aime <strong>créer des sites internet</strong> et découvrir de nouvelles technologies. 
-          J&apos;utilise principalement <Link href="https://laravel.com/"><a><strong>Laravel</strong></a></Link>, <Link href="https://fr.wordpress.org/"><a><strong>WordPress</strong></a></Link> ainsi que <Link href="https://fr.reactjs.org/"><a><strong>React</strong></a></Link>. 
-          Ce site sert également à vous partagez mes retours d&apos;expérience sur mon <Link href="/blog"><a className="font-bold">blog</a></Link>.
+          Je suis <strong>développeur web</strong> à <strong>Bergerac</strong>. Je <strong>créer des sites internet</strong> pour les professionnels et les particuliers. 
+          J&apos;utilise principalement <Link href="https://laravel.com/"><a rel="nofollow" title="Voir le site de Laravel"><strong>Laravel</strong></a></Link>, <Link href="https://fr.wordpress.org/"><a rel="nofollow" title="Voir le site de WordPress"><strong>WordPress</strong></a></Link> ainsi que <Link href="https://fr.reactjs.org/"><a rel="nofollow" title="Voir le site de React"><strong>React</strong></a></Link>. 
         </p>
         <div className="pt-10">
-          <Link href="/contact"><a className="btn btn-primary">Me contacter</a></Link>
-          <Link href="/realisations"><a className="btn btn-secondary">Voir mes réalisations</a></Link>
+          <Link href="/contact" title="Se rendre sur la page contact"><a className="btn btn-primary">Me contacter</a></Link>
+          <Link href="/realisations" title="Se rendre sur la page réalisations"><a className="btn btn-secondary">Voir mes réalisations</a></Link>
         </div>
       </section>
       <section>
@@ -45,7 +44,7 @@ export default function Home({ services, posts, projects }) {
       <section>
         <div className="flex justify-between items-center pb-10">
           <h2 className="py-0">Mes derniers articles.</h2>
-          <Link href="/blog">
+          <Link href="/blog" title="Se rendre sur la page du blog">
             <a className="text-right">
               Voir plus d&apos;articles
             </a>
@@ -61,7 +60,7 @@ export default function Home({ services, posts, projects }) {
       <div className="flex justify-between items-center pb-10">
           <h2 className="py-0">Mes derniers projets.</h2>
           <Link href="/realisations">
-            <a className="text-right">
+            <a title="Se rendre sur la page des projets" className="text-right">
               Voir plus de projets
             </a>
           </Link>

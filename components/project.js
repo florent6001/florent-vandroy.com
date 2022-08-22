@@ -7,14 +7,14 @@ export default function project({ project }) {
             <h3 className="font-normal py-0 text-primary mb-10" itemProp="name">{project.frontmatter.title}</h3>
             <div className="w-full text-center">
                 {project.frontmatter.demo && ( 
-                    <Link href={project.frontmatter.demo}>
+                    <Link title="Voir le projet" href={project.frontmatter.demo}>
                         <a target={"_blank"} className="w-fit px-5 py-2 mx-2 border border-white rounded-sm text-white hover:no-underline whitespace-nowrap hover:bg-white hover:text-black transition duration-500" itemProp="url">
                             Voir le site
                         </a>
                     </Link>
                 )}
                 {project.frontmatter.source && (
-                    <Link href={project.frontmatter.source}>
+                    <Link title="Voir le code source du projet" href={project.frontmatter.source}>
                         <a target={"_blank"} className="w-fit px-5 py-2 mx-2 border border-white rounded-sm text-white hover:no-underline whitespace-nowrap hover:bg-white hover:text-black transition duration-500">
                             Code source
                         </a>
