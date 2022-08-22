@@ -5,7 +5,7 @@ export default function project({ project }) {
     return (
         <div className="w-full h-full border border-gray-800 text-center transition duration-700 hover:bg-gray-800 project" itemScope itemType="https://schema.org/WebSite">
             <div className="w-full h-fit">
-                <img src={`/images/projects/${project.name}.jpg`} className="object-cover w-full h-full transition-all duration-500" />
+                <img src={`/images/projects/${project.name}.jpg`} className="object-cover w-full h-full transition-all duration-500" alt={`Capture d'écran du site ${project.frontmatter.title}`} />
             </div>
             <div className="p-10 pt-5">
                 <h3 className="font-normal py-0 text-primary mb-10" itemProp="name">{project.frontmatter.title}</h3>
