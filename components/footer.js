@@ -5,7 +5,7 @@ import { faFacebookSquare, faLinkedin, faGithubSquare } from "@fortawesome/free-
 export default function Footer() {
     return (
         <footer className="border-t border-primary my-20 px-5">
-            <div className="flex justify-between flex-col lg:flex-row max-w-6xl mx-auto">
+            <div className="flex justify-between flex-col lg:flex-row max-w-7xl mx-auto">
                 <div>
                     <h4 className="text-primary">A propos</h4>
                     <p>Je suis développeur web Fullstack freelance sur le secteur de Bergerac, en Dordogne (24). Passionnée depuis petit par l&apos;informatique, je crée maintenant des sites web depuis environs 5 ans.</p>

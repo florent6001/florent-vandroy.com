@@ -77,7 +77,7 @@ export default function Cookies() {
         <>
             {displayCookies &&
                 <div className="fixed w-full h-auto bottom-0 bg-gray-800 py-10 overflow-y-scroll max-h-screen">
-                    <div className="max-w-6xl mx-auto px-5">
+                    <div className="max-w-7xl mx-auto px-5">
                         <p className="text-3xl text-primary py-5">Ce site internet utilise des cookies.</p>
                         <p>
                             Nous utilisons les cookies pour améliorer le fonctionnement du site, mais également pour voir comment vous interagissez avec celui-ci. Nous utiliserons les cookies uniquement si vous nous le permettez en cliquant sur &ldquo;Accepter les cookies&ldquo;. Vous pouvez également choisir quel cookie vous souhaitez autoriser.

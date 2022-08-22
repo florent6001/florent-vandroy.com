@@ -101,6 +101,7 @@ export async function getStaticProps(){
 
   var files = fs.readdirSync('projects');
   const projects = files.map((fileName) => {
+    const name = fileName.replace('.md', '')
     const readFile = fs.readFileSync(`projects/${fileName}`, 'utf-8');
     const { data: frontmatter, content } = matter(readFile);
     const date = new Date(frontmatter.date).toLocaleDateString("fr-FR", { day: 'numeric', year: 'numeric', month: 'long'});
@@ -108,7 +109,8 @@ export async function getStaticProps(){
     return {
       frontmatter,
       date,
-      content
+      content,
+      name
     };
   });
 

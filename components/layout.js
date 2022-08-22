@@ -30,7 +30,7 @@ export default function Layout({children,
                 <meta name={"twitter:image:alt"} content={'Image de fond du site florent-vandroy.fr/'} />
             </Head>
             <Header />
-            <main className="max-w-6xl mx-auto px-5">
+            <main className="max-w-7xl mx-auto px-5">
                 {children}
             </main>
             <Footer />

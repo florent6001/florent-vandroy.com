@@ -24,7 +24,7 @@ export default function Header() {
 
     return(
         <header className="border-b border-primary px-5">
-            <div className="max-w-6xl flex justify-between items-center mx-auto min-h-[100px]">
+            <div className="max-w-7xl flex justify-between items-center mx-auto min-h-[100px]">
                 <Link href={"/"}>
                     <a className="relative h-[40px] w-[50px]" title="Se rendre sur la page d'accueil">
                         <Image src={logo} layout={'fill'} objectFit={'contain'} className="object-left" alt="Logo de Florent Vandroy" />
