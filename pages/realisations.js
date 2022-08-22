@@ -12,7 +12,7 @@ export default function realisations({ projects }) {
             pageDescription="Liste des sites sur lesquels j'ai travaillé. Visite et/ou code source à disposition."
             >
             <h1>Mes réalisations</h1>
-            <p className="pb-10">Cette page regroupe les projets sur lesquelles j'ai travaillé. Pour chaque projet, vous avez l'opportunité de vous rendre sur le site et/ou de voir le code source du projet.</p>
+            <p className="pb-10">Cette page regroupe les projets sur lesquelles j&apos;ai travaillé. Pour chaque projet, vous avez l&apos;opportunité de vous rendre sur le site et/ou de voir le code source du projet.</p>
             <div className="grid lg:grid-cols-3 grid-cols-1 gap-4">
                 {projects.map((project, index) => {
                     return (

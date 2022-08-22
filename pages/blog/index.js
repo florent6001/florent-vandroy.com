@@ -12,7 +12,7 @@ export default function blog({ posts }) {
             pageDescription="Blog de florent-vandroy.fr, article parlant de développement web, partage et retour d'expérience sur les nouvelles technologies."
         >
             <h1>Blog</h1>
-            <p className="pb-10">Cette page regroupe la liste des articles que j'ai écris. Les articles parlent principalement de développement web.</p>
+            <p className="pb-10">Cette page regroupe la liste des articles que j&apos;ai écris. Les articles parlent principalement de développement web.</p>
             {posts.map((post) => {
                 return (
                     <Post post={post}  key={post.slug} />
