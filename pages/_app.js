@@ -16,8 +16,9 @@ function MyApp({ Component, pageProps }) {
     const handleRouteChange = (url) => {
       navbar.classList.remove('fixed')
       navbar.classList.add('hidden')
-      if(!document.cookie.indexOf('google_analytics') == -1) {
+      if(document.cookie.indexOf('google_analytics') !== -1) {
         gtag.pageview(url)
+      } else {
       }
     }
 
