@@ -1,5 +1,5 @@
 nav {
-    @apply w-fit;
+    @apply w-fit z-50;
 }
 
 header {

@@ -5,3 +5,8 @@ footer .flex div{
 footer a:hover {
     @apply underline;
 }
+
+
+footer h2 {
+  @apply text-2xl;
+}

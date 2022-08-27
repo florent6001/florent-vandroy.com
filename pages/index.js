@@ -11,7 +11,7 @@ import Link from "next/link"
 import Image from "next/image"
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCode, faChartLine, faMobileAlt, faMobile } from "@fortawesome/free-solid-svg-icons";
+import { faCode, faChartLine, faMobileAlt } from "@fortawesome/free-solid-svg-icons";
 import { sortByDate } from "../utils/sortByDate";
 
 export default function Home({ services, posts, projects }) {
@@ -22,8 +22,8 @@ export default function Home({ services, posts, projects }) {
         <p className="text-3xl">Hey, je suis Florent !</p>
         <h1>Développeur web full stack freelance <br />à Bergerac (Dordogne)</h1>
         <p className="text-2xl text-secondary leading-8">
-          Je suis <strong>développeur web</strong> à <strong>Bergerac</strong>. Je <strong>créer des sites internet</strong> pour les professionnels et les particuliers. 
-          J&apos;utilise principalement <Link href="https://laravel.com/"><a rel="nofollow" title="Voir le site de Laravel"><strong>Laravel</strong></a></Link>, <Link href="https://fr.wordpress.org/"><a rel="nofollow" title="Voir le site de WordPress"><strong>WordPress</strong></a></Link> ainsi que <Link href="https://fr.reactjs.org/"><a rel="nofollow" title="Voir le site de React"><strong>React</strong></a></Link>. 
+          Je suis <strong>développeur web</strong> à <strong>Bergerac</strong>. Je <strong>créer des sites internet</strong> pour les professionnels et les particuliers.
+          J&apos;utilise principalement <Link href="https://laravel.com/"><a rel="nofollow" title="Voir le site de Laravel"><strong>Laravel</strong></a></Link>, <Link href="https://fr.wordpress.org/"><a rel="nofollow" title="Voir le site de WordPress"><strong>WordPress</strong></a></Link> ainsi que <Link href="https://fr.reactjs.org/"><a rel="nofollow" title="Voir le site de React"><strong>React</strong></a></Link>.
         </p>
         <div className="pt-10">
           <Link href="/contact" title="Se rendre sur la page contact"><a className="btn btn-primary">Me contacter</a></Link>
@@ -49,14 +49,14 @@ export default function Home({ services, posts, projects }) {
       <section>
         <h2>Mes services.</h2>
         <div className="grid lg:grid-cols-3 grid-cols-1 gap-4">
-          {services.map((service) => 
+          {services.map((service) =>
             <div className="service" key={service.title} itemScope itemType="https://schema.org/Service">
               <FontAwesomeIcon icon={service.icon} size="2x" aria-label="Illustration code" />
               <h3 itemProp="name">{service.title}</h3>
               <p itemProp="description">
                 {service.content}
               </p>
-            </div> 
+            </div>
           )}
         </div>
       </section>
@@ -69,7 +69,7 @@ export default function Home({ services, posts, projects }) {
             </a>
           </Link>
         </div>
-        <div className="grid lg:grid-cols-3 grid-cols-1 gap-4">
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4">
           {projects.map((project, index) => {
             return (
               <Project project={project} key={index} />
@@ -103,19 +103,19 @@ export default function Home({ services, posts, projects }) {
   )
 }
 
-export async function getStaticProps(){
+export async function getStaticProps() {
   var files = fs.readdirSync('posts');
   const posts = files.map((fileName) => {
-      const slug = fileName.replace('.md', '');
-      const readFile = fs.readFileSync(`posts/${fileName}`, 'utf-8');
-      const { data: frontmatter } = matter(readFile);
-      const date = new Date(frontmatter.date).toLocaleDateString("fr-FR", { day: 'numeric', year: 'numeric', month: 'long'});
+    const slug = fileName.replace('.md', '');
+    const readFile = fs.readFileSync(`posts/${fileName}`, 'utf-8');
+    const { data: frontmatter } = matter(readFile);
+    const date = new Date(frontmatter.date).toLocaleDateString("fr-FR", { day: 'numeric', year: 'numeric', month: 'long' });
 
-      return {
-        slug,
-        frontmatter,
-        date
-      };
+    return {
+      slug,
+      frontmatter,
+      date
+    };
   });
 
   var files = fs.readdirSync('projects');
@@ -123,7 +123,7 @@ export async function getStaticProps(){
     const name = fileName.replace('.md', '')
     const readFile = fs.readFileSync(`projects/${fileName}`, 'utf-8');
     const { data: frontmatter, content } = matter(readFile);
-    const date = new Date(frontmatter.date).toLocaleDateString("fr-FR", { day: 'numeric', year: 'numeric', month: 'long'});
+    const date = new Date(frontmatter.date).toLocaleDateString("fr-FR", { day: 'numeric', year: 'numeric', month: 'long' });
 
     return {
       frontmatter,
@@ -134,15 +134,15 @@ export async function getStaticProps(){
   });
 
   const services = [
-    {'icon': faMobileAlt, 'title': 'Responsive Design', 'content': 'Le site internet s\'adapte à tous les types d\'écran (mobile, tablette et ordinateur).'},
-    {'icon': faChartLine, 'title': 'Référencement Naturel', 'content': 'Le site respecte les bonnes pratiques du web et est optimisé afin d\'améliorer le référencement naturel.'},
-    {'icon': faCode, 'title': 'Création de site internet', 'content': 'Site internet développé avec Wordpress ou Laravel/React selon les besoins.'}
+    { 'icon': faMobileAlt, 'title': 'Responsive Design', 'content': 'Le site internet s\'adapte à tous les types d\'écran (mobile, tablette et ordinateur).' },
+    { 'icon': faChartLine, 'title': 'Référencement Naturel', 'content': 'Le site respecte les bonnes pratiques du web et est optimisé afin d\'améliorer le référencement naturel.' },
+    { 'icon': faCode, 'title': 'Création de site internet', 'content': 'Site internet développé avec Wordpress ou Laravel/React selon les besoins.' }
   ]
   return {
-      props: {
-        services,
-        posts: posts.sort(sortByDate).slice(0, 3),
-        projects : projects.sort(sortByDate).slice(0, 3),
-      },
+    props: {
+      services,
+      posts: posts.sort(sortByDate).slice(0, 3),
+      projects: projects.sort(sortByDate).slice(0, 3),
+    },
   };
 }
