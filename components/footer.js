@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="flex justify-between flex-col lg:flex-row max-w-7xl mx-auto">
         <div>
           <h2 className="text-primary">A propos</h2>
-          <p>Je suis développeur web Fullstack freelance sur le secteur de Bergerac, en Dordogne (24). Passionnée depuis petit par l&apos;informatique, je crée maintenant des sites web depuis environs 5 ans.</p>
+          <p>Je suis développeur web Fullstack freelance sur le secteur de Bergerac, en Dordogne (24). Passionné depuis petit par l&apos;informatique, je crée maintenant des sites web depuis environ 5 ans.</p>
         </div>
         <div className="lg:mx-5">
           <h2 className="text-primary">Documents légaux</h2>
