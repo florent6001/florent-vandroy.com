@@ -1,6 +1,5 @@
 ---
 title: "ATM24"
-demo: "https://atm24.fr/"
 date: "2021-07-01"
 ---
 
