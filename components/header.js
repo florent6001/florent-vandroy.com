@@ -124,7 +124,7 @@ export default function Header() {
           />
         </div>
         <nav
-          className="lg:relative lg:w-full lg:bg-transparent overflow-y-auto hidden lg:block top-0 right-0 w-2/3 h-full bg-gray-200 dark:bg-gray-800 lg:dark:bg-black"
+          className="lg:relative lg:w-full lg:bg-transparent overflow-y-auto hidden lg:block top-0 right-0 w-2/3 h-full bg-gray-200 dark:bg-gray-800 lg:dark:bg-inherit"
           id="navbar"
         >
           <div
