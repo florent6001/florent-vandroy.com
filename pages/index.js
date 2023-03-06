@@ -1,146 +1,260 @@
-import Post from "../components/post"
-import Project from "../components/project"
-import Contact from "../components/contact"
-import Layout from "../components/layout"
+import Post from "../components/post";
+import Project from "../components/project";
+import Contact from "../components/contact";
+import Layout from "../components/layout";
 
-import florent_vandroy from "../public/images/florent-vandroy.png"
+import florent_vandroy from "../public/images/florent-vandroy.png";
+import laravel from "../public/icons/laravel.svg";
+import reactJS from "../public/icons/reactJS.svg";
+import tailwindCSS from "../public/icons/tailwindCSS.svg";
+import typeScript from "../public/icons/typeScript.svg";
 
-import fs from 'fs'
-import matter from 'gray-matter'
-import Link from "next/link"
-import Image from "next/image"
+import nextJSBlack from "../public/icons/nextJSBlack.svg";
+import nextJSWhite from "../public/icons/nextJSWhite.svg";
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCode, faChartLine, faMobileAlt } from "@fortawesome/free-solid-svg-icons";
+import fs from "fs";
+import matter from "gray-matter";
+import Link from "next/link";
+import Image from "next/image";
+
 import { sortByDate } from "../utils/sortByDate";
+import { useTheme } from "next-themes";
 
-export default function Home({ services, posts, projects }) {
+export default function Home({ posts, projects }) {
+  const { systemTheme, theme, setTheme } = useTheme();
+  const currentTheme = theme === "system" ? systemTheme : theme;
+
+  let nextJS = "test";
+
+  if (currentTheme == "light") {
+    nextJS = nextJSBlack;
+  } else {
+    nextJS = nextJSWhite;
+  }
 
   return (
     <Layout>
       <section>
-        <p className="text-3xl">Hey, je suis Florent !</p>
-        <h1>Développeur web full stack freelance <br />à Bergerac (Dordogne)</h1>
-        <p className="text-2xl text-secondary leading-8">
-          Je suis <strong>développeur web</strong> à <strong>Bergerac</strong>. Je <strong>crée des sites internet</strong> pour les professionnels et les particuliers.
-          J&apos;utilise principalement <Link href="https://laravel.com/"><a rel="nofollow" title="Voir le site de Laravel"><strong>Laravel</strong></a></Link>, <Link href="https://fr.wordpress.org/"><a rel="nofollow" title="Voir le site de WordPress"><strong>WordPress</strong></a></Link> ainsi que <Link href="https://fr.reactjs.org/"><a rel="nofollow" title="Voir le site de React"><strong>React</strong></a></Link>.
+        <p className="text-3xl">Hey! 🤙</p>
+        <h1 className="py-3">
+          Je suis <span className="text-primary">Florent</span> Vandroy,
+        </h1>
+        <p className="text-xl">
+          Développeur web full stack junior. Je me concentre actuellement sur le
+          développement de mon activité freelance. Je suis disponible pour toute
+          demande professionnel et prêt à entreprendre de novueaux projets.
         </p>
-        <div className="pt-10">
-          <Link href="/contact" title="Se rendre sur la page contact"><a className="btn btn-primary">Me contacter</a></Link>
-          <Link href="/realisations" title="Se rendre sur la page réalisations"><a className="btn btn-secondary">Voir mes réalisations</a></Link>
+        <div className="pt-5">
+          <Link
+            href="/realisations"
+            title="Se rendre sur la page réalisations"
+            className="btn btn-primary"
+          >
+            Voir mes réalisations
+          </Link>
         </div>
       </section>
       <section>
-        <div className="flex justify-center items-center flex-col-reverse lg:flex-row">
-          <div className="w-full lg:w-2/3">
-            <h2 className="lg:pt-0">A propos de moi</h2>
-            <p className="text-xl">
-              Passionnée par le développement et geek depuis mon adolescence, j&apos;ai commencé par passer un <Link href="https://www.greta-npdc.fr/formation/bep-systemes-electroniques-numeriques/"><a rel="nofollow" title="Voir les détails du diplôme">BEP SEN (Système Électronique et Numérique)</a></Link> avant d&apos;intégrer <Link href="https://www.la-wab.fr/"><a rel="nofollow" title="Aller sur le site de la wab">La WAB</a></Link> pour une initiation au métier du web (graphismes, développement, marketing, ..) d&apos;une durée de six mois. <br /><br />
-              La formation étant très bénéfique pour moi, je suis resté à la WAB pour effectuer une alternance de deux ans et ainsi obtenir un <Link href="https://www.francecompetences.fr/recherche/rncp/26602/"><a title="En savoir plus sur le titre professionnel" rel="nofollow">titre professionnel WebDesigner</a></Link>.
-              Pendant ses deux ans d&apos;alternance, j&apos;ai eu la chance de pouvoir travailler au service pôle internet du <Link href="https://www.credit-agricole.fr/ca-charente-perigord/particulier.html"><a title="Visiter le site du crédit agricole charente-perigord" rel="nofollow">Crédit Agricole Charente-Périgord</a></Link>. <br /><br />
-              Toujours aussi passionné qu&apos;au début, je continue d&apos;apprendre chaque jour de nouvelles technologies et propose mes services de développeur fullstack en tant que freelance.
-            </p>
-          </div>
-          <div className="relative right-0 w-full lg:w-1/3 text-center">
-            <Image src={florent_vandroy} objectPosition={'center'} alt="Photo de Florent Vandroy" />
-          </div>
-        </div>
-      </section>
-      <section>
-        <h2>Mes services.</h2>
-        <div className="grid lg:grid-cols-3 grid-cols-1 gap-4">
-          {services.map((service) =>
-            <div className="service" key={service.title} itemScope itemType="https://schema.org/Service">
-              <FontAwesomeIcon icon={service.icon} size="2x" aria-label="Illustration code" />
-              <h3 itemProp="name">{service.title}</h3>
-              <p itemProp="description">
-                {service.content}
+        <div className="w-full">
+          <h2 className="lg:pt-0 py-5">A propos de moi</h2>
+          <div className="w-full flex justify-center flex-col-reverse lg:flex-row">
+            <div className="md:pr-10 w-full">
+              <p className="text-xl">
+                Passionné par le développement web depuis mon adolescence,
+                j&apos;ai intégré{" "}
+                <Link
+                  href="https://www.la-wab.fr/"
+                  rel="nofollow"
+                  title="Aller sur le site de la wab"
+                >
+                  La WAB
+                </Link>{" "}
+                pour effectuer une alternance de deux ans et ainsi obtenir un{" "}
+                <Link
+                  href="https://www.francecompetences.fr/recherche/rncp/26602/"
+                  title="En savoir plus sur le titre professionnel"
+                  rel="nofollow"
+                >
+                  titre professionnel Designer Web.
+                </Link>
+                <br />
+                <br />
+                Pendant cette d&apos;alternance, j&apos;ai eu la chance de
+                travailler au service pôle internet du{" "}
+                <Link
+                  href="https://www.credit-agricole.fr/ca-charente-perigord/particulier.html"
+                  title="Visiter le site du crédit agricole charente-perigord"
+                  rel="nofollow"
+                >
+                  Crédit Agricole Charente-Périgord
+                </Link>
+                , au sein duquel j&apos;ai pu développer de nombreux outils en
+                interne.
+                <br />
+                <br />
+                Toujours aussi passionné, je continue chaque jour de développer
+                de nouvelles compétences en découvrant de nouvelles
+                technologies.
+                <br />
+                <br />
+                Voici une liste de tehcnologies avec lesquelles j&apos;ai
+                travaillé récemment :
               </p>
+              <div className="flex gap-3 mt-5 text-4xl">
+                <Link
+                  href={"https://laravel.com"}
+                  target={"_blank"}
+                  title="Se rendre sur le site de Laravel"
+                >
+                  <Image
+                    src={laravel}
+                    width={"30"}
+                    height={"30"}
+                    alt="Logo de Laravel"
+                  />
+                </Link>
+                <Link
+                  href={"https://nextJS.org"}
+                  target={"_blank"}
+                  title="Se rendre sur le site de nextJS"
+                >
+                  <Image
+                    src={nextJS}
+                    width={"30"}
+                    height={"30"}
+                    alt="Logo de NextJS"
+                  />
+                </Link>
+                <Link
+                  href={"https://reactjs.org"}
+                  target={"_blank"}
+                  title="Se rendre sur le site de nextJS"
+                >
+                  <Image
+                    src={reactJS}
+                    width={"30"}
+                    height={"30"}
+                    alt="Logo de reactJS"
+                  />
+                </Link>
+                <Link
+                  href={"https://reactjs.org"}
+                  target={"_blank"}
+                  title="Se rendre sur le site de nextJS"
+                >
+                  <Image
+                    src={tailwindCSS}
+                    width={"30"}
+                    height={"30"}
+                    alt="Logo de reactJS"
+                  />
+                </Link>
+                <Link
+                  href={"https://reactjs.org"}
+                  target={"_blank"}
+                  title="Se rendre sur le site de nextJS"
+                >
+                  <Image
+                    src={typeScript}
+                    width={"30"}
+                    height={"30"}
+                    alt="Logo de reactJS"
+                  />
+                </Link>
+              </div>
             </div>
-          )}
+            <div className="w-full lg:w-2/5 text-center">
+              <Image src={florent_vandroy} alt="Photo de Florent Vandroy" />
+            </div>
+          </div>
         </div>
       </section>
       <section>
         <div className="flex justify-between items-center pb-10">
           <h2 className="py-0">Mes derniers projets.</h2>
-          <Link href="/realisations">
-            <a title="Se rendre sur la page des projets" className="text-right">
-              Voir plus de projets
-            </a>
+          <Link
+            href="/realisations"
+            title="Se rendre sur la page des projets"
+            className="text-right"
+          >
+            Voir tous les projets
           </Link>
         </div>
         <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4">
           {projects.map((project, index) => {
-            return (
-              <Project project={project} key={index} />
-            )
+            return <Project project={project} key={index} />;
           })}
         </div>
       </section>
       <section>
         <div className="flex justify-between items-center pb-10">
-          <h2 className="py-0">Mes derniers articles.</h2>
-          <Link href="/blog" title="Se rendre sur la page du blog">
-            <a className="text-right">
-              Voir plus d&apos;articles
-            </a>
+          <h2 className="py-0">Mes tous les articles.</h2>
+          <Link
+            href="/blog"
+            title="Se rendre sur la page du blog"
+            className="text-right"
+          >
+            Voir plus d&apos;articles
           </Link>
         </div>
         {posts.map((post) => {
-          return (
-            <Post post={post} key={post.slug} />
-          )
+          return <Post post={post} key={post.slug} />;
         })}
       </section>
       <section>
         <h2>Me contacter.</h2>
         <p>
-          Actuellement, le développement web n&apos;étant pas ma seule activité. Il est plus facile pour moi de communiquer par email : florentvandroy@gmail.com. Vous pouvez également remplir le formulaire de contact ci-dessous.
+          Actuellement, le développement web n&apos;étant pas ma seule activité.
+          Il est plus facile pour moi de communiquer par email :
+          florentvandroy@gmail.com. Vous pouvez également remplir le formulaire
+          de contact ci-dessous.
         </p>
         <Contact />
       </section>
     </Layout>
-  )
+  );
 }
 
 export async function getStaticProps() {
-  var files = fs.readdirSync('posts');
+  var files = fs.readdirSync("posts");
   const posts = files.map((fileName) => {
-    const slug = fileName.replace('.md', '');
-    const readFile = fs.readFileSync(`posts/${fileName}`, 'utf-8');
+    const slug = fileName.replace(".md", "");
+    const readFile = fs.readFileSync(`posts/${fileName}`, "utf-8");
     const { data: frontmatter } = matter(readFile);
-    const date = new Date(frontmatter.date).toLocaleDateString("fr-FR", { day: 'numeric', year: 'numeric', month: 'long' });
+    const date = new Date(frontmatter.date).toLocaleDateString("fr-FR", {
+      day: "numeric",
+      year: "numeric",
+      month: "long",
+    });
 
     return {
       slug,
       frontmatter,
-      date
+      date,
     };
   });
 
-  var files = fs.readdirSync('projects');
+  var files = fs.readdirSync("projects");
   const projects = files.map((fileName) => {
-    const name = fileName.replace('.md', '')
-    const readFile = fs.readFileSync(`projects/${fileName}`, 'utf-8');
+    const name = fileName.replace(".md", "");
+    const readFile = fs.readFileSync(`projects/${fileName}`, "utf-8");
     const { data: frontmatter, content } = matter(readFile);
-    const date = new Date(frontmatter.date).toLocaleDateString("fr-FR", { day: 'numeric', year: 'numeric', month: 'long' });
+    const date = new Date(frontmatter.date).toLocaleDateString("fr-FR", {
+      day: "numeric",
+      year: "numeric",
+      month: "long",
+    });
 
     return {
       frontmatter,
       date,
       content,
-      name
+      name,
     };
   });
 
-  const services = [
-    { 'icon': faMobileAlt, 'title': 'Responsive Design', 'content': 'Le site internet s\'adapte à tous les types d\'écran (mobile, tablette et ordinateur).' },
-    { 'icon': faChartLine, 'title': 'Référencement Naturel', 'content': 'Le site respecte les bonnes pratiques du web et est optimisé afin d\'améliorer le référencement naturel.' },
-    { 'icon': faCode, 'title': 'Création de site internet', 'content': 'Site internet développé avec Wordpress ou Laravel/React selon les besoins.' }
-  ]
   return {
     props: {
-      services,
       posts: posts.sort(sortByDate).slice(0, 3),
       projects: projects.sort(sortByDate).slice(0, 3),
     },

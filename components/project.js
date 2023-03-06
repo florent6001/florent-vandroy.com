@@ -1,35 +1,48 @@
 import Link from "next/link";
-import md from 'markdown-it';
+import md from "markdown-it";
 import Image from "next/image";
 
 export default function project({ project }) {
-    return (
-        <div className="w-full h-full border border-gray-800 text-center transition duration-700 hover:bg-gray-800 project" itemScope itemType="https://schema.org/WebSite">
-            <div className="block">
-                <div className="relative max-h-full w-full top-0 left-0">
-                    <Image src={`/images/projects/${project.name}.jpg`} layout="responsive" objectPosition={'top left'} objectFit="cover" height={'100%'} width={'100%'} className="transition-all duration-500 w-full" alt={`Capture d'écran du site ${project.frontmatter.title}`} />
-                </div>
-            </div>
-            <div className="p-10">
-                <h3 className="font-normal py-0 text-primary mb-10" itemProp="name">{project.frontmatter.title}</h3>
-                <div className="w-full text-center">
-                    {project.frontmatter.demo && ( 
-                        <Link title="Voir le projet" href={project.frontmatter.demo}>
-                            <a target={"_blank"} className="w-fit px-5 py-2 mx-2 border border-white rounded-sm text-white hover:no-underline whitespace-nowrap hover:bg-white hover:text-black transition duration-500" itemProp="url">
-                                Voir le site
-                            </a>
-                        </Link>
-                    )}
-                    {project.frontmatter.source && (
-                        <Link title="Voir le code source du projet" href={project.frontmatter.source}>
-                            <a target={"_blank"} className="w-fit px-5 py-2 mx-2 border border-white rounded-sm text-white hover:no-underline whitespace-nowrap hover:bg-white hover:text-black transition duration-500">
-                                Code source
-                            </a>
-                        </Link>
-                    )}
-                    <div dangerouslySetInnerHTML={{ __html: md().render(project.content) }} itemProp="description" className="mt-10" />
-                </div>
-            </div>
+  return (
+    <div
+      className="w-full project"
+      itemScope
+      itemType="https://schema.org/WebSite"
+    >
+      <div className="p-5 h-full border rounded hover:bg-gray-200 dark:hover:bg-gray-800 transition duration-700">
+        <h3 className="font-normal py-0" itemProp="name">
+          {project.frontmatter.title}
+        </h3>
+        <div className="w-full">
+          <div className="flex flex-col md:flex-row gap-2 my-4">
+            {project.frontmatter.demo && (
+              <Link
+                title="Voir le projet"
+                href={project.frontmatter.demo}
+                target={"_blank"}
+                className="btn btn-primary"
+                itemProp="url"
+              >
+                Voir le site
+              </Link>
+            )}
+            {project.frontmatter.source && (
+              <Link
+                title="Voir le code source du projet"
+                href={project.frontmatter.source}
+                target={"_blank"}
+                className="btn btn-primary"
+              >
+                Code source
+              </Link>
+            )}
+          </div>
+          <div
+            dangerouslySetInnerHTML={{ __html: md().render(project.content) }}
+            itemProp="description"
+          />
         </div>
-      )
+      </div>
+    </div>
+  );
 }

@@ -1,4 +1,0 @@
-Contenu homepage :
-    [ ] Revoir section "mes services" avec les logos des frameworks que j'utilise
-    [ ] Dark / Light mode
-    [ ] Article sur Gatsby cookie notice

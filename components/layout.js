@@ -4,7 +4,7 @@ import Footer from '../components/footer'
 import Head from "next/head"
 import Cookies from "./cookies"
 
-export default function Layout({children, 
+export default function Layout({children,
     pageTitle = "Développeur Web Fullstack à Bergerac",
     pageDescription = "Florent Vandroy, développeur fullstack à Bergerac (Dordogne). Création de site internet avec WordPress ou bien Laravel et React (selon les besoins)"
 }) {
@@ -30,7 +30,7 @@ export default function Layout({children,
                 <meta name={"twitter:image:alt"} content={'Image de fond du site florent-vandroy.fr/'} />
             </Head>
             <Header />
-            <main className="max-w-7xl mx-auto px-5">
+            <main className="max-w-4xl mx-auto px-5">
                 {children}
             </main>
             <Footer />

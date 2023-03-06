@@ -5,9 +5,13 @@ nav {
 header {
     @apply mb-10;
 }
-  
+
 nav li {
-    @apply text-white mx-3 lg:py-3 pt-5 pb-0 uppercase border-b border-transparent lg:hover:border-primary;
+    @apply mx-3 lg:py-1 pt-5 pb-0 capitalize font-medium;
+}
+
+nav li:hover {
+  filter: drop-shadow(rgba(0, 0, 0, 0.25) 0px 4px 4px);
 }
 
 nav li:last-child {
