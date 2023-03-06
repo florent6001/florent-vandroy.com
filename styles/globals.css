@@ -70,7 +70,7 @@ section {
 }
 
 .btn-secondary {
-  @apply bg-secondary hover:bg-gray-600;
+  @apply bg-secondary text-white hover:bg-gray-600;
 }
 
 pre,

@@ -58,7 +58,7 @@ export default function Home({ posts, projects }) {
         <div className="w-full">
           <h2 className="lg:pt-0 py-5">A propos de moi</h2>
           <div className="w-full flex justify-center flex-col-reverse lg:flex-row">
-            <div className="md:pr-10 w-full">
+            <div className="lg:pr-10 w-full">
               <p className="text-xl">
                 Passionné par le développement web depuis mon adolescence,
                 j&apos;ai intégré{" "}
@@ -180,7 +180,7 @@ export default function Home({ posts, projects }) {
             Voir tous les projets
           </Link>
         </div>
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4">
+        <div className="grid lg:grid-cols-3 lg:grid-cols-2 grid-cols-1 gap-4">
           {projects.map((project, index) => {
             return <Project project={project} key={index} />;
           })}

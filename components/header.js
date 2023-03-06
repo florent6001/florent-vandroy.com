@@ -124,7 +124,7 @@ export default function Header() {
           />
         </div>
         <nav
-          className="lg:relative lg:w-full lg:bg-transparent overflow-y-auto hidden lg:block top-0 right-0 w-2/3 h-full bg-gray-200 dark:bg-gray-800"
+          className="lg:relative lg:w-full lg:bg-transparent overflow-y-auto hidden lg:block top-0 right-0 w-2/3 h-full bg-gray-200 dark:bg-gray-800 lg:dark:bg-black"
           id="navbar"
         >
           <div
@@ -137,7 +137,7 @@ export default function Header() {
               aria-label="Fermer le menu"
             />
           </div>
-          <div className="w-full flex flex-col md:flex-row justify-between">
+          <div className="w-full flex flex-col lg:flex-row justify-between">
             <ul className="w-full flex flex-col lg:flex-row items-center pt-5 lg:pt-0">
               <li className={router.pathname == "/" ? "active" : ""}>
                 <Link href="/" title="Se rendre sur la page d'accueil">
@@ -169,7 +169,7 @@ export default function Header() {
                 </Link>
               </li>
             </ul>
-            <ul className="flex justify-center md:justify-end w-full">
+            <ul className="flex justify-center lg:justify-end w-full">
               {renderThemeChanger()}
               <li>
                 <Link
