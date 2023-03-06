@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer className="border-t border-primary mt-10 py-5">
-      <ul className="flex items-center justify-center gap-5">
+      <ul className="flex lg:flex-row flex-col items-center justify-center gap-5">
         <li>
           <Link href="/mentions-legales" title="Voir les mentions légales">
             Mentions légales

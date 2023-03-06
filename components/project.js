@@ -1,6 +1,5 @@
 import Link from "next/link";
 import md from "markdown-it";
-import Image from "next/image";
 
 export default function project({ project }) {
   return (
@@ -14,7 +13,7 @@ export default function project({ project }) {
           {project.frontmatter.title}
         </h3>
         <div className="w-full">
-          <div className="flex flex-col lg:flex-row gap-2 my-4">
+          <div className="flex lg:flex-row gap-2 my-4">
             {project.frontmatter.demo && (
               <Link
                 title="Voir le projet"
