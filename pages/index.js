@@ -42,7 +42,7 @@ export default function Home({ posts, projects }) {
         <p className="text-xl">
           Développeur web full stack junior. Je me concentre actuellement sur le
           développement de mon activité freelance. Je suis disponible pour toute
-          demande professionnel et prêt à entreprendre de novueaux projets.
+          demande professionnel et prêt à entreprendre de nouveaux projets.
         </p>
         <div className="pt-5">
           <Link
