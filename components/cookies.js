@@ -182,7 +182,7 @@ export default function Cookies() {
             <>
               <Script
                 strategy="afterInteractive"
-                src={`https://www.googletagmanager.com/gtag/js?id=UA-123751778-1"`}
+                src={`https://www.googletagmanager.com/gtag/js?id=G-BRHFW3DMGM"`}
               />
               <Script
                 id="gtag-init"
@@ -192,7 +192,7 @@ export default function Cookies() {
                                     window.dataLayer = window.dataLayer || [];
                                     function gtag(){dataLayer.push(arguments);}
                                     gtag('js', new Date());
-                                    gtag('config', 'UA-123751778-1', {
+                                    gtag('config', 'G-BRHFW3DMGM', {
                                     page_path: window.location.pathname,
                                     });
                                 `,
