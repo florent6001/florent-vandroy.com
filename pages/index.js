@@ -43,7 +43,7 @@ export default function Home({ posts, projects }) {
                     Je suis <span className="text-primary">Florent</span> Vandroy,
                 </h1>
                 <p className="text-xl">
-                    un Développeur web full stack junior passionné. Je me concentre actuellement sur le développement de mon activité en freelance, prêt à apporter mes compétences à votre projet. Vous cherchez un partenaire de confiance pour réaliser votre vision ? Ne cherchez plus, vous l'avez trouvé !
+                    un D&eacute;veloppeur web full stack junior passionn&eacute;. Je me concentre actuellement sur le d&eacute;veloppement de mon activit&eacute; en freelance, pr&ecirc;t &agrave; apporter mes comp&eacute;tences &agrave; votre projet. Vous cherchez un partenaire de confiance pour r&eacute;aliser votre vision ? Ne cherchez plus, vous l&apos;avez trouv&eacute; !
                 </p>
                 <div className="pt-5">
                     <Link
@@ -61,7 +61,7 @@ export default function Home({ posts, projects }) {
                     <div className="w-full flex justify-center flex-col-reverse lg:flex-row">
                         <div className="lg:pr-10 w-full">
                             <p className="text-xl">
-                                Je suis un passionn&eacute; de développement web depuis mon adolescence, et j'ai eu la chance de concr&eacute;tiser ma passion en int&eacute;grant
+                                Je suis un passionn&eacute; de d&eacute;veloppement web depuis mon adolescence, et j&apos;ai eu la chance de concr&eacute;tiser ma passion en int&eacute;grant {" "}
                                 <Link
                                     href="https://www.la-wab.fr/"
                                     rel="nofollow"
@@ -69,7 +69,7 @@ export default function Home({ posts, projects }) {
                                 >
                                     La WAB
                                 </Link>{" "}
-                                pour une alternance de deux ans, qui m'a permis d'obtenir un {" "}
+                                pour une alternance de deux ans, qui m&apos;a permis d&apos;obtenir un {" "}
                                 <Link
                                     href="https://www.francecompetences.fr/recherche/rncp/26602/"
                                     title="En savoir plus sur le titre professionnel"
@@ -86,12 +86,12 @@ export default function Home({ posts, projects }) {
                                     rel="nofollow"
                                 >
                                     Crédit Agricole Charente-Périgord
-                                </Link>
-                                Toujours avide de nouvelles d&eacute;couvertes, j'&eacute;largis continuellement mes comp&eacute;tences en me familiarisant avec les derni&egrave,res technologies du web.
+                                </Link>{" "}
+                                Toujours avide de nouvelles d&eacute;couvertes, j'&eacute;largis continuellement mes comp&eacute;tences en me familiarisant avec les derni&egrave;res technologies du web.
                                 <br />
                                 <br />
                                 Voici une liste de technologies avec lesquelles j&apos;ai
-                                récemment travaillé :
+                                r&eacute;cemment travaill&eacute; :
                             </p>
                             <div className="flex gap-3 mt-5 text-4xl">
                                 <Link
@@ -219,7 +219,7 @@ export default function Home({ posts, projects }) {
             <section>
                 <h2>Me contacter.</h2>
                 <p>
-                    Vous souhaitez collaborer sur un projet passionnant ? N'hésitez pas à me contacter dès maintenant ! <br />
+                    Vous souhaitez collaborer sur un projet passionnant ? N&apos;h&eacute;sitez pas &agrave; me contacter d&egrave;s maintenant ! <br />
                     Vous pouvez remplir le formulaire de contact ci-dessous, ou me contacter directement par email <a href="mailto:florentvandroy@gmail.com">florentvandroy@gmail.com</a>.
                 </p>
                 <Contact />

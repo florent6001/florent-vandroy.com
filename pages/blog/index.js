@@ -12,7 +12,7 @@ export default function blog({ posts }) {
             pageDescription="Blog de florent-vandroy.fr, article parlant de développement web, partage et retour d'expérience sur les nouvelles technologies."
         >
             <h1>Blog</h1>
-            <p className="pb-10">Cette page regroupe la liste des articles que j'ai écrits. Plongez dans l'univers du développement web et découvrez des conseils, des astuces et des réflexions sur des sujets variés. Que vous soyez développeur en herbe ou expert chevronné, vous trouverez ici des ressources pour nourrir votre passion du web.</p>
+            <p className="pb-10">Cette page regroupe la liste des articles que j&apos;ai écrits. Plongez dans l&apos;univers du d&eacute;veloppement web et d&eacute;couvrez des conseils, des astuces et des r&eacute;flexions sur des sujets vari&eacute;s. Que vous soyez d&eacute;veloppeur en herbe ou expert chevronn&eacute;, vous trouverez ici des ressources pour nourrir votre passion du web.</p>
             {posts.map((post) => {
                 return (
                     <Post post={post} key={post.slug} />
