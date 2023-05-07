@@ -13,7 +13,7 @@ export default function contact() {
             </p>
             <Contact />
             <p className="mt-5">
-                Cliquez sur le bouton "Envoyer mon message" pour transmettre votre demande. Je m'engage &agrave; vous r&eacute;pondre dans les meilleurs d&eacute;lais. <br />
+                Cliquez sur le bouton &lsquo;Envoyer mon message&lsquo; pour transmettre votre demande. Je m&apos;engage &agrave; vous r&eacute;pondre dans les meilleurs d&eacute;lais. <br />
                 Je suis impatient de d&eacute;couvrir votre projet et de collaborer avec vous pour le concr&eacute;tiser.
             </p>
 

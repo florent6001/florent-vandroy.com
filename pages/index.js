@@ -79,7 +79,7 @@ export default function Home({ posts, projects }) {
                                 </Link>
                                 <br />
                                 <br />
-                                Pendant cette exp&eacute;rience enrichissante, j'ai pu d&eacute;velopper de nombreux outils internes au seins du service pôle internet du{" "}
+                                Pendant cette exp&eacute;rience enrichissante, j&apos;ai pu d&eacute;velopper de nombreux outils internes au seins du service pôle internet du{" "}
                                 <Link
                                     href="https://www.credit-agricole.fr/ca-charente-perigord/particulier.html"
                                     title="Visiter le site du crédit agricole charente-perigord"
@@ -87,7 +87,7 @@ export default function Home({ posts, projects }) {
                                 >
                                     Crédit Agricole Charente-Périgord
                                 </Link>{" "}
-                                Toujours avide de nouvelles d&eacute;couvertes, j'&eacute;largis continuellement mes comp&eacute;tences en me familiarisant avec les derni&egrave;res technologies du web.
+                                Toujours avide de nouvelles d&eacute;couvertes, j&apos;&eacute;largis continuellement mes comp&eacute;tences en me familiarisant avec les derni&egrave;res technologies du web.
                                 <br />
                                 <br />
                                 Voici une liste de technologies avec lesquelles j&apos;ai
