@@ -6,49 +6,49 @@ import fs from "fs";
 import matter from "gray-matter";
 
 export default function realisations({ projects }) {
-  return (
-    <Layout
-      pageTitle="Mes réalisations"
-      pageDescription="Liste des sites sur lesquels j'ai travaillé. Visite et/ou code source à disposition."
-    >
-      <h1>Mes réalisations</h1>
-      <p className="pb-10">
-        Cette page regroupe les projets sur lesquelles j&apos;ai travaillé. Pour
-        chaque projet, vous avez l&apos;opportunité de vous rendre sur le site
-        et/ou de voir le code source du projet.
-      </p>
-      <div className="grid lg:grid-cols-3 grid-cols-1 gap-4">
-        {projects.map((project, index) => {
-          return <Project project={project} key={index} />;
-        })}
-      </div>
-    </Layout>
-  );
+    return (
+        <Layout
+            pageTitle="Mes réalisations"
+            pageDescription="Liste des sites sur lesquels j'ai travaillé. Visite et/ou code source à disposition."
+        >
+            <h1>Mes réalisations</h1>
+            <p className="pb-10">
+                Bienvenue sur ma page de réalisations ! Vous trouverez ici une sélection de projets sur lesquels j'ai travaillé. Chaque projet représente une occasion de mettre en pratique mes compétences et ma passion pour le développement web. Pour chaque projet, vous avez l'opportunité de découvrir le site en direct et/ou de consulter le code source du projet.
+                <br /><br />
+                N'hésitez pas à explorer ces réalisationstions pour vous faire une idée de mon travail et de mon expertise. Je suis impatient de collaborer avec vous et de transformer votre vision en réalité.
+            </p>
+            <div className="grid lg:grid-cols-3 grid-cols-1 gap-4">
+                {projects.map((project, index) => {
+                    return <Project project={project} key={index} />;
+                })}
+            </div>
+        </Layout>
+    );
 }
 
 export async function getStaticProps() {
-  var files = fs.readdirSync("projects");
-  const projects = files.map((fileName) => {
-    const name = fileName.replace(".md", "");
-    const readFile = fs.readFileSync(`projects/${fileName}`, "utf-8");
-    const { data: frontmatter, content } = matter(readFile);
-    const date = new Date(frontmatter.date).toLocaleDateString("fr-FR", {
-      day: "numeric",
-      year: "numeric",
-      month: "long",
+    var files = fs.readdirSync("projects");
+    const projects = files.map((fileName) => {
+        const name = fileName.replace(".md", "");
+        const readFile = fs.readFileSync(`projects/${fileName}`, "utf-8");
+        const { data: frontmatter, content } = matter(readFile);
+        const date = new Date(frontmatter.date).toLocaleDateString("fr-FR", {
+            day: "numeric",
+            year: "numeric",
+            month: "long",
+        });
+
+        return {
+            frontmatter,
+            date,
+            content,
+            name,
+        };
     });
 
     return {
-      frontmatter,
-      date,
-      content,
-      name,
+        props: {
+            projects: projects.sort(sortByDate),
+        },
     };
-  });
-
-  return {
-    props: {
-      projects: projects.sort(sortByDate),
-    },
-  };
 }

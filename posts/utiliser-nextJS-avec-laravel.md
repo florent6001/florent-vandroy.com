@@ -5,22 +5,22 @@ title: "Utiliser nextJS avec Laravel"
 
 ## Introduction
 
-Nous entendons parler de plus en plus de développement avec une API back-end ([Laravel](https://laravel.com/), [Symfony](https://symfony.com/), [ExpressJS](https://expressjs.com/fr/)), et un front-end séparé (avec [NextJS](https://nextjs.org/), [NuxtJS](https://nuxtjs.org/), [Gatsby](https://www.gatsbyjs.com/), ...).
-À première vue, séparer le back-end et le front-end peut faire peur et paraître compliqué.
-Le simple fait de créer un système de login / register paraît être un véritable calvaire, il faut placer le token dans les entêtes, gérer les accès réservés au membre, ..
-Laravel a sorti [Laravel Breeze](https://laravel.com/docs/9.x/starter-kits) il y a quelques temps maintenant, permettant de générer une application de base pour démarrer son projet (Système d'authentification, mot de passe oublié, ..)
+De nos jours, le développement avec une API back-end (comme ([Laravel](https://laravel.com/), [Symfony](https://symfony.com/) ou [ExpressJS](https://expressjs.com/fr/)), et un front-end séparé (avec [NextJS](https://nextjs.org/), [NuxtJS](https://nuxtjs.org/), [Gatsby](https://www.gatsbyjs.com/), etc.) est de plus en plus courant. Au premier abord, la séparation du back-end et du front-end peut sembler complexe et intimidante. La mise en place d'un système de connexion ou d'inscription ppeut sembler être un véritable défi, notamment la gestion des tokens d'authentification, des accès réservés au membres, etc. 
+
+
+Heureusement, Laravel a sorti Laravel Breeze il y a quelques temps, offrant une application de base pour démarrer rapidement un projet avec un système d'authenticatioon et de réinitialisation de mot de passe.
 
 ## L'apparition de breeze-next.
 
-Bien qu'il n'y ai actuellement que très peu de vidéo sur le sujet sur Youtube, [Laravel Breeze](https://laravel.com/docs/9.x/starter-kits) propose un starter avec nextJS, que vous trouverez sur ce dépôt Github : [laravel/breeze-next](https://github.com/laravel/breeze-next). Ce repository, vous permettra de clôner une application NextJS comportant exactement la même chose que Breeze pour la version Laravel.
+Bien que peu de vidéos soient actuellement disponibles sur le sujet sur YouTube, Laravel Breeze propose un starter avec NextJS, que vous pouvez trouver sur le dépot github : [laravel/breeze-next](https://github.com/laravel/breeze-next). Ce référentiel vous permet de cloner une application NextJS qui intègre exactement les mêmes fonctionnalités que Breeze pour la version Laravel.
 
-Vous aurez donc une application NextJS utilisant le template de Breeze (avec [TailwindCSS](https://tailwindcss.com/)) comportant les mêmes fonctionnalité (Authentication, mot de passe oublié, ..)
+Vous disposerez ainsi d'une application NextJS utilisant le template de Breeze (avec [TailwindCSS](https://tailwindcss.com/)) et offrant les mêmes fonctionnalités telle que l'authentification et la réinitialisation de mot de passe.
 
 ## Un middleware pour les utilisateurs.
 
-Breeze-next, vous permet de bloquer l'accès au utilisateurs non identifié, mais également au utilisateurs identifiés pour certaine page. Dans le dossier Hook, vous trouverez un fichier Auth, permettant de faire passer ce middleware sur vos pages.
+Breeze-next vous permet de restreindre l'accès à certaines pages aux utilisateurs non identifiés, maiségalement à certains utilisateurs identifiés. Dans le dossier Hooks, vous trouvez un fichier "Auth" qui permet d'appliquer ce middleware à vos pages.
 
-Voici un exemple de celui-ci :
+Voici un exemple :
 
 ```js
 import { useAuth } from "@/hooks/auth";
@@ -40,16 +40,16 @@ const Login = () => {
 
 ## Utilisation des layouts
 
-Le AppLayout (le nom du layout donné par breeze-next pour les utilisateurs connecté, restreint automatique les utilisateurs non connecté.)
+Le layout AppLayout (nom donné par Breeze Next aux utilisateurs connectés) restreint automatiquement l'accès aux utilisateurs non connectés.
 
 ```js
 const { user } = useAuth({ middleware: "auth" });
 ```
 
-Dans la logique des choses, vous devrez donc utiliser le layout GuestLayout pour les pages où l'utilisateur n'a pas besoin d'être connecté. Et le layout AppLayout pour les pages nécessitant d'être connecté (un tableau de bord par exemple).
+Dans cette logique, vous devrez utiliser le layout GuestLayout pour les pages où l'utilisateur n'a pas besoin d'être connecté, et le layout AppLayout pour les pages nécessitant une connexion (par exemple, un tableau de bord).
 
-## Le mieux à faire, c'est de tester.
+## Le meilleur moyen de comprendre est de tester par vous-même.
 
-Maintenant que vous avez une petite idée de comment fonctionne breeze-next, il ne vous reste plus qu'à l'essayer. Pour cloner le repository, je vous laisse suivre le [README.MD](https://github.com/laravel/breeze-next) présent sur la page Github, celui-ci est très bien détaillé et vous guides dans l'installation et la configuration du projet Next ET Laravel.
+Maintenant que vous avez une idée de comment fonctionne Breeze Next, il ne vous reste plus qu'à l'essayer. Pour cloner le référenciel, je vous invite à suivre le Readme.MD disponible sur la page Github de Breeze-Next. Celui-ci est très bien détaillé et vous guide pas à pas dans l'installation et la configuration du projet NextJS et Laravel.
 
-Je vous conseille de le tester en faisant un simple projet assez basique (un blog par exemple). Vous verrez ainsi la création de l'API avec Laravel, et l'intégration de celle-ci avec Next.
+Je vous recommande de le tester en créant un projet simple (comme un blog par exemple). Vous pourrez ainsi découvrir la création de l'API avec Laravel et son intégration dans NextJS.

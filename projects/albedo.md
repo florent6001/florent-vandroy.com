@@ -5,4 +5,4 @@ demo: "https://florent6001.github.io/Albedo-Template/"
 date: "2018-02-01"
 ---
 
-Albedo Template est un template créé à l'occasion d'un exercice OpenClassRoom en me basant sur une maquette trouvée sur Dribble.
+Un template exceptionnel créé dans le cadre d'un exercice OpenClassRoom, inspiré d'une maquette trouvée sur Dribbble.

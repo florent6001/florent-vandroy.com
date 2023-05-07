@@ -4,4 +4,4 @@ demo: "https://yoga-bergerac.fr/"
 date: "2022-05-30"
 ---
 
-Yoga Bergerac est un site WordPress sur laquelle j'ai effectué une refonte graphique.
+Une refonte graphique réussie pour le site Yoga Bergerac, apportant une nouvelle identité visuelle et une expérience utilisateur optimisée.
