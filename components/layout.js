@@ -14,10 +14,12 @@ export default function Layout({
     pageTitle = "Développeur Web Fullstack à Bergerac",
     pageDescription = "Florent Vandroy, développeur fullstack à Bergerac (Dordogne). Création de site internet avec WordPress ou bien Laravel et React (selon les besoins)",
 }) {
+
+    const completeTitle = `${pageTitle} - Florent Vandroy`;
     return (
         <>
             <Head>
-                <title>{pageTitle} - Florent Vandroy</title>
+                <title>{completeTitle}</title>
                 <meta name={"description"} content={pageDescription} />
                 <meta
                     property={"og:title"}

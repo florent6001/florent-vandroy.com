@@ -1,6 +1,6 @@
 ---
 date: "2023-05-07"
-title: "Les avantages du développement web avec Laravel: Pourquoi choisir ce framework puissant"
+title: "Laravel: Pourquoi choisir ce framework puissant"
 ---
 
 ## Introduction :
