@@ -195,7 +195,7 @@ export default function Home({ posts, projects }) {
                         Voir tous les projets
                     </Link>
                 </div>
-                <div className="grid lg:grid-cols-3 lg:grid-cols-2 grid-cols-1 gap-4">
+                <div className="grid lg:grid-cols-2 grid-cols-1 gap-4">
                     {projects.map((project, index) => {
                         return <Project project={project} key={index} />;
                     })}
