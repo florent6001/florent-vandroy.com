@@ -119,9 +119,9 @@ export default function Home({ posts, projects }) {
                                     />
                                 </Link>
                                 <Link
-                                    href={"https://reactjs.org"}
+                                    href={"https://react.dev/"}
                                     target={"_blank"}
-                                    title="Se rendre sur le site de nextJS"
+                                    title="Se rendre sur le site de React"
                                 >
                                     <Image
                                         src={reactJS}
@@ -131,27 +131,27 @@ export default function Home({ posts, projects }) {
                                     />
                                 </Link>
                                 <Link
-                                    href={"https://reactjs.org"}
+                                    href={"https://tailwindcss.com/"}
                                     target={"_blank"}
-                                    title="Se rendre sur le site de nextJS"
+                                    title="Se rendre sur le site de TailwindCSS"
                                 >
                                     <Image
                                         src={tailwindCSS}
                                         width={"30"}
                                         height={"30"}
-                                        alt="Logo de reactJS"
+                                        alt="Logo de TailwindCSS"
                                     />
                                 </Link>
                                 <Link
-                                    href={"https://reactjs.org"}
+                                    href={"https://www.typescriptlang.org/"}
                                     target={"_blank"}
-                                    title="Se rendre sur le site de nextJS"
+                                    title="Se rendre sur le site de Typescript"
                                 >
                                     <Image
                                         src={typeScript}
                                         width={"30"}
                                         height={"30"}
-                                        alt="Logo de reactJS"
+                                        alt="Logo de Typescript"
                                     />
                                 </Link>
                             </div>
