@@ -38,12 +38,12 @@ export default function Home({ posts, projects }) {
     return (
         <Layout>
             <section>
-                <p className="text-3xl">Hey! 🤙</p>
+                <p className="text-4xl">Hey! 🤙, je suis <span className="text-primary">Florent</span> Vandroy.</p>
                 <h1 className="py-3">
-                    Je suis <span className="text-primary">Florent</span> Vandroy,
+                    Développeur web Laravel Freelance
                 </h1>
                 <p className="text-xl">
-                    un D&eacute;veloppeur web full stack junior passionn&eacute;. Je me concentre actuellement sur le d&eacute;veloppement de mon activit&eacute; en freelance, pr&ecirc;t &agrave; apporter mes comp&eacute;tences &agrave; votre projet. Vous cherchez un partenaire de confiance pour r&eacute;aliser votre vision ? Ne cherchez plus, vous l&apos;avez trouv&eacute; !
+                    Passionn&eacute; de d&eacute;veloppement web depuis mon adolescence, je consacre mon temps &agrave; cr&eacute;er des sites internet sur mesure pour aider les entreprises &agrave; se d&eacute;velopper. 
                 </p>
                 <div className="pt-5">
                     <Link
@@ -61,7 +61,7 @@ export default function Home({ posts, projects }) {
                     <div className="w-full flex justify-center flex-col-reverse lg:flex-row">
                         <div className="lg:pr-10 w-full">
                             <p className="text-xl">
-                                Je suis un passionn&eacute; de d&eacute;veloppement web depuis mon adolescence, et j&apos;ai eu la chance de concr&eacute;tiser ma passion en int&eacute;grant {" "}
+                                Passionn&eacute; de d&eacute;veloppement web depuis mon adolescence, et j&apos;ai eu la chance de concr&eacute;tiser ma passion en int&eacute;grant {" "}
                                 <Link
                                     href="https://www.la-wab.fr/"
                                     rel="nofollow"
@@ -90,8 +90,7 @@ export default function Home({ posts, projects }) {
                                 Toujours avide de nouvelles d&eacute;couvertes, j&apos;&eacute;largis continuellement mes comp&eacute;tences en me familiarisant avec les derni&egrave;res technologies du web.
                                 <br />
                                 <br />
-                                Voici une liste de technologies avec lesquelles j&apos;ai
-                                r&eacute;cemment travaill&eacute; :
+                                Voici une liste de technologies avec lesquelles j&apos;aime travaill&eacute; :
                             </p>
                             <div className="flex gap-3 mt-5 text-4xl">
                                 <Link
@@ -269,7 +268,7 @@ export async function getStaticProps() {
     return {
         props: {
             posts: posts.sort(sortByDate).slice(0, 3),
-            projects: projects.sort(sortByDate).slice(0, 3),
+            projects: projects.sort(sortByDate).slice(0, 4),
         },
     };
 }
