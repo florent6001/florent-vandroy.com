@@ -11,8 +11,8 @@ import safari_pinned from "../public/favicon/safari-pinned-tab.svg";
 
 export default function Layout({
     children,
-    pageTitle = "Développeur Web Fullstack à Bergerac",
-    pageDescription = "Florent Vandroy, développeur fullstack à Bergerac (Dordogne). Création de site internet avec WordPress ou bien Laravel et React (selon les besoins)",
+    pageTitle = "Développeur Web Laravel à Bergerac (Dordogne)",
+    pageDescription = "Florent Vandroy, développeur Laravel à Bergerac (Dordogne) proche de Bordeaux. Création de site internet avec WordPress ou bien Laravel et React (selon les besoins)",
 }) {
 
     const completeTitle = `${pageTitle} - Florent Vandroy`;
