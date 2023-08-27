@@ -59,6 +59,7 @@ export default function Contact() {
             id="ajaxForm"
             onSubmit={handleSubmit}
             className="pt-5"
+            data-aos="fade-in"
         >
             <label htmlFor="name">Votre prénom / nom</label>
             <input

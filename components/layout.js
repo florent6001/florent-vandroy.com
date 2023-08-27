@@ -9,11 +9,21 @@ import favicon_32 from "../public/favicon/favicon-32x32.png";
 import favicon_16 from "../public/favicon/favicon-16x16.png";
 import safari_pinned from "../public/favicon/safari-pinned-tab.svg";
 
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
+
 export default function Layout({
     children,
     pageTitle = "Développeur Web Laravel à Bergerac (Dordogne)",
     pageDescription = "Florent Vandroy, développeur Laravel à Bergerac (Dordogne) proche de Bordeaux. Création de site internet avec WordPress ou bien Laravel et React (selon les besoins)",
 }) {
+
+    useEffect(() => {
+        AOS.init({
+            duration: 2000,
+        });
+    }, []); 
 
     const completeTitle = `${pageTitle} - Florent Vandroy`;
     return (

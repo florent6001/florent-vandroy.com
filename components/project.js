@@ -8,7 +8,7 @@ export default function project({ project }) {
       itemScope
       itemType="https://schema.org/WebSite"
     >
-      <div className="p-5 h-full border rounded hover:bg-gray-200 dark:hover:bg-gray-800 transition duration-700">
+      <div data-aos="zoom-in" className="p-5 h-full border rounded hover:bg-gray-200 dark:hover:bg-gray-800 transition duration-700">
         <h3 className="font-normal py-0" itemProp="name">
           {project.frontmatter.title}
         </h3>

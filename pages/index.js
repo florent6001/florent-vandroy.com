@@ -37,7 +37,7 @@ export default function Home({ posts, projects }) {
 
     return (
         <Layout>
-            <section>
+            <section data-aos="fade-down">
                 <p className="text-4xl">Hey! 🤙, je suis <span className="text-primary">Florent</span> Vandroy.</p>
                 <h1 className="py-3">
                     Développeur web Laravel Freelance
@@ -57,9 +57,9 @@ export default function Home({ posts, projects }) {
             </section>
             <section>
                 <div className="w-full">
-                    <h2 className="lg:pt-0 py-5">A propos de moi</h2>
+                    <h2 className="lg:pt-0 py-5" data-aos="fade-up">A propos de moi</h2>
                     <div className="w-full flex justify-center flex-col-reverse lg:flex-row">
-                        <div className="lg:pr-10 w-full">
+                        <div className="lg:pr-10 w-full" data-aos="fade-right">
                             <p className="text-xl">
                                 Passionn&eacute; de d&eacute;veloppement web depuis mon adolescence, et j&apos;ai eu la chance de concr&eacute;tiser ma passion en int&eacute;grant {" "}
                                 <Link
@@ -155,7 +155,7 @@ export default function Home({ posts, projects }) {
                                 </Link>
                             </div>
                         </div>
-                        <div className="w-full lg:w-2/5 text-center">
+                        <div className="w-full lg:w-2/5 text-center" data-aos="fade-left">
                             <Image src={florent_vandroy} alt="Photo de Florent Vandroy" />
                         </div>
                     </div>
@@ -163,7 +163,7 @@ export default function Home({ posts, projects }) {
             </section>
             <section>
                 <div className="pb-10">
-                    <h2 className="py-0">Mes services.</h2>
+                    <h2 className="py-0" data-aos="fade-up">Mes services.</h2>
                 </div>
                 <div className="grid md:grid-cols-2 grid-cols-1 gap-3 items-start">
                     <Service
@@ -184,7 +184,7 @@ export default function Home({ posts, projects }) {
                 </div>
             </section>
             <section>
-                <div className="flex justify-between items-center pb-10">
+                <div  data-aos="fade-up" className="flex justify-between items-center pb-10">
                     <h2 className="py-0">Mes derniers projets.</h2>
                     <Link
                         href="/realisations"
@@ -201,7 +201,7 @@ export default function Home({ posts, projects }) {
                 </div>
             </section>
             <section>
-                <div className="flex justify-between items-center pb-10">
+                <div data-aos="fade-up" className="flex justify-between items-center pb-10">
                     <h2 className="py-0">Mes tous les articles.</h2>
                     <Link
                         href="/blog"
@@ -216,8 +216,8 @@ export default function Home({ posts, projects }) {
                 })}
             </section>
             <section>
-                <h2>Me contacter.</h2>
-                <p>
+                <h2 data-aos="fade-up">Me contacter.</h2>
+                <p data-aos="fade-left">
                     Vous souhaitez collaborer sur un projet passionnant ? N&apos;h&eacute;sitez pas &agrave; me contacter d&egrave;s maintenant ! <br />
                     Vous pouvez remplir le formulaire de contact ci-dessous, ou me contacter directement par email <a href="mailto:florentvandroy@gmail.com">florentvandroy@gmail.com</a>.
                 </p>
