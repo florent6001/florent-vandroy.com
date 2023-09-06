@@ -87,7 +87,7 @@ export default function Home({ posts, allProjects, latestProjects }) {
                         </div>
                         <div className="lg:pr-10 w-full" data-aos="fade-left">
                             <p className="text-xl">
-                            En tant que développeur passionné, je suis toujours à la recherche de défis stimulants pour mettre mes compétences techniques et ma créativité au service de projets innovants. Je reste à l'affût des dernières tendances et techs du moment, convaincu que mon expertise pourrait être un autout au seins d'une équipe dynamique et des projets ambitieux. 🚀
+                            En tant que développeur passionné, je suis toujours à la recherche de défis stimulants pour mettre mes compétences techniques et ma créativité au service de projets innovants. Je reste à l&apos;affût des dernières tendances et techs du moment, convaincu que mon expertise pourrait être un autout au seins d&apos;une équipe dynamique et des projets ambitieux. 🚀
                             </p>
                            <div className="flex gap-5 justify-between mt-5">
                                 <Counter number="20" text="Technologies terminée" />
