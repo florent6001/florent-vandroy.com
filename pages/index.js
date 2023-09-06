@@ -190,7 +190,7 @@ export async function getStaticProps() {
         return dateB - dateA;
     });
 
-    const allProjects = projects;
+    const allProjects = projects.slice(2);
     const latestProjects = projects.slice(0, 2);
 
     return {
