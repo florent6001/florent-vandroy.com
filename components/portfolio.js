@@ -1,19 +1,25 @@
 import Link from "next/link";
 import md from "markdown-it";
 
-export default function project({ project }) {
+export default function Portfolio({ project }) {
   return (
     <div
-      className="w-full project h-full"
+      className="w-full project h-full p-5"
       itemScope
       itemType="https://schema.org/WebSite"
     >
-      <div data-aos="zoom-in" className="flex justify-between flex-col p-5 h-full border border-gray-600 dark:border-white rounded hover:bg-gray-200 dark:hover:bg-gray-800 transition duration-700">
+      <div data-aos="zoom-in" className="flex flex-col justify-between border-gray-600 dark:border-white p-5 h-full border rounded hover:bg-gray-200 dark:hover:bg-gray-800 transition duration-700">
         <div className="w-full">
           <h3 className="font-normal py-0" itemProp="name">
             {project.frontmatter.title}
           </h3>
-          <div className="flex lg:flex-row gap-2 my-4">
+          <div
+            dangerouslySetInnerHTML={{ __html: md().render(project.content) }}
+            itemProp="description"
+            className="py-3 font-thin"
+          />
+        </div>
+        <div className="flex flex-col text-center gap-2 my-4">
             {project.frontmatter.demo && (
               <Link
                 title="Voir le projet"
@@ -36,11 +42,6 @@ export default function project({ project }) {
               </Link>
             )}
           </div>
-          <div
-            dangerouslySetInnerHTML={{ __html: md().render(project.content) }}
-            itemProp="description"
-          />
-        </div>
       </div>
     </div>
   );

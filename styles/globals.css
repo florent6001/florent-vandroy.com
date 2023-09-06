@@ -9,8 +9,14 @@
 
 /* Typography */
 
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden
+}
+
 body {
   font-family: "Roboto", sans-serif;
+  @apply dark:bg-gray-900 bg-gray-100;
 }
 
 h1,
@@ -20,7 +26,7 @@ h4,
 h5,
 h6 {
   font-family: "DM Sans", sans-serif;
-  @apply font-bold py-5;
+  @apply font-bold py-1;
 }
 
 h1 {
@@ -49,12 +55,24 @@ h6 {
 
 /* Globals */
 
+input {
+  @apply h-12 rounded-xl;
+}
+
 main a {
   @apply text-primary hover:underline;
 }
 
+.react-multi-carousel-dot button {
+  @apply h-3 w-3 mx-1 rounded-full dark:border-primary;
+}
+
+.react-multi-carousel-dot--active button {
+  @apply bg-primary border-primary !important;
+}
+
 section {
-  @apply py-10;
+  @apply py-10 w-full;
 }
 
 .btn {
@@ -73,6 +91,10 @@ section {
   @apply bg-secondary text-white hover:bg-gray-600;
 }
 
+.btn-lg {
+  @apply my-5 px-5 py-3 text-lg capitalize;
+}
+
 pre,
 code {
   @apply max-w-full overflow-x-scroll py-5;
@@ -86,4 +108,13 @@ pre {
   white-space: pre-wrap;
   overflow-x: auto;
   tab-size: 4;
+}
+
+.bounce {
+  animation: bounce 1.2s ease infinite alternate;
+}
+
+@keyframes bounce{
+  from {height: 0px;}
+  to   {height: 50px;}
 }

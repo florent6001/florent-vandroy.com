@@ -2,22 +2,16 @@ nav {
     @apply w-fit z-50;
 }
 
-header {
-    @apply mb-10;
-}
-
 nav li {
-    @apply mx-3 lg:py-1 pt-5 pb-0 capitalize font-medium;
+    @apply mx-3 lg:py-1 pt-5 pb-0 capitalize font-medium ml-0 lg:ml-3 font-bold;
 }
 
 nav li:hover {
-  filter: drop-shadow(rgba(0, 0, 0, 0.25) 0px 4px 4px);
+    @apply text-primary;
+    transition: all;
+    transition-duration: 300ms;
 }
 
 nav li:last-child {
     @apply mr-0;
-}
-
-nav li:hover {
-    transition: border-bottom 1s;
 }

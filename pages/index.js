@@ -1,14 +1,10 @@
 import Post from "../components/post";
 import Project from "../components/project";
+import Portfolio from "../components/portfolio";
 import Contact from "../components/contact";
 import Layout from "../components/layout";
-import Service from "../components/service";
 
 import florent_vandroy from "../public/images/florent-vandroy.png";
-import laravel from "../public/icons/laravel.svg";
-import reactJS from "../public/icons/reactJS.svg";
-import tailwindCSS from "../public/icons/tailwindCSS.svg";
-import typeScript from "../public/icons/typeScript.svg";
 
 import nextJSBlack from "../public/icons/nextJSBlack.svg";
 import nextJSWhite from "../public/icons/nextJSWhite.svg";
@@ -17,15 +13,37 @@ import fs from "fs";
 import matter from "gray-matter";
 import Link from "next/link";
 import Image from "next/image";
+import { BiMouse } from 'react-icons/bi';
+import { AiOutlineArrowDown, AiOutlineSend } from "react-icons/ai";
 
 import { sortByDate } from "../utils/sortByDate";
 import { useTheme } from "next-themes";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCode, faRocket, faSyncAlt } from "@fortawesome/free-solid-svg-icons";
+import Counter from "../components/counter";
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
 
-export default function Home({ posts, projects }) {
+export default function Home({ posts, allProjects, latestProjects }) {
     const { systemTheme, theme, setTheme } = useTheme();
     const currentTheme = theme === "system" ? systemTheme : theme;
+    const responsive = {
+        superLargeDesktop: {
+          // the naming can be any, depends on you.
+          breakpoint: { max: 4000, min: 3000 },
+          items: 5
+        },
+        desktop: {
+          breakpoint: { max: 3000, min: 1024 },
+          items: 3
+        },
+        tablet: {
+          breakpoint: { max: 1024, min: 464 },
+          items: 2
+        },
+        mobile: {
+          breakpoint: { max: 464, min: 0 },
+          items: 1
+        }
+      };
 
     let nextJS = "test";
 
@@ -37,172 +55,78 @@ export default function Home({ posts, projects }) {
 
     return (
         <Layout>
-            <section data-aos="fade-down">
-                <p className="text-4xl">Hey! 🤙, je suis <span className="text-primary">Florent</span> Vandroy.</p>
-                <h1 className="py-3">
-                    Développeur web Laravel Freelance
-                </h1>
-                <p className="text-xl">
-                    Passionn&eacute; de d&eacute;veloppement web depuis mon adolescence, je consacre mon temps &agrave; cr&eacute;er des sites internet sur mesure pour aider les entreprises &agrave; se d&eacute;velopper. 
-                </p>
+            <section>
+                <p className="text-xl" data-aos="fade-left">Je suis</p>
+                <h1 className="text-5xl lg:text-8xl py-5" data-aos="fade-left" data-aos-delay="500">Florent Vandroy</h1>
+                <h2 className="py-3 text-xl" data-aos="fade-left" data-aos-delay="1000">
+                    Développeur web FullStack
+                </h2>
                 <div className="pt-5">
                     <Link
                         href="/realisations"
                         title="Se rendre sur la page réalisations"
-                        className="btn btn-primary"
+                        className="btn btn-primary btn-lg block"
                     >
-                        D&eacute;couvrir mes réalisations
+                        Me contacter <AiOutlineSend className="inline" />
                     </Link>
+                    <div className="relative h-[50px]">
+                        <Link href="#about" title="Scroll down" className="dark:text-white text-black bounce block flex gap-3 items-center mt-5 text-xl hover:no-underline">
+                            <BiMouse />
+                            Scroll down
+                            <AiOutlineArrowDown />
+                        </Link>
+                    </div>
                 </div>
             </section>
-            <section>
+            <section id="about">
                 <div className="w-full">
-                    <h2 className="lg:pt-0 py-5" data-aos="fade-up">A propos de moi</h2>
-                    <div className="w-full flex justify-center flex-col-reverse lg:flex-row">
-                        <div className="lg:pr-10 w-full" data-aos="fade-right">
-                            <p className="text-xl">
-                                Passionn&eacute; de d&eacute;veloppement web depuis mon adolescence, et j&apos;ai eu la chance de concr&eacute;tiser ma passion en int&eacute;grant {" "}
-                                <Link
-                                    href="https://www.la-wab.fr/"
-                                    rel="nofollow"
-                                    title="Aller sur le site de la wab"
-                                >
-                                    La WAB
-                                </Link>{" "}
-                                pour une alternance de deux ans, qui m&apos;a permis d&apos;obtenir un {" "}
-                                <Link
-                                    href="https://www.francecompetences.fr/recherche/rncp/26602/"
-                                    title="En savoir plus sur le titre professionnel"
-                                    rel="nofollow"
-                                >
-                                    titre professionnel Designer Web.
-                                </Link>
-                                <br />
-                                <br />
-                                Pendant cette exp&eacute;rience enrichissante, j&apos;ai pu d&eacute;velopper de nombreux outils internes au seins du service pôle internet du{" "}
-                                <Link
-                                    href="https://www.credit-agricole.fr/ca-charente-perigord/particulier.html"
-                                    title="Visiter le site du crédit agricole charente-perigord"
-                                    rel="nofollow"
-                                >
-                                    Crédit Agricole Charente-Périgord
-                                </Link>{" "}
-                                Toujours avide de nouvelles d&eacute;couvertes, j&apos;&eacute;largis continuellement mes comp&eacute;tences en me familiarisant avec les derni&egrave;res technologies du web.
-                                <br />
-                                <br />
-                                Voici une liste de technologies avec lesquelles j&apos;aime travaill&eacute; :
-                            </p>
-                            <div className="flex gap-3 mt-5 text-4xl">
-                                <Link
-                                    href={"https://laravel.com"}
-                                    target={"_blank"}
-                                    title="Se rendre sur le site de Laravel"
-                                >
-                                    <Image
-                                        src={laravel}
-                                        width={"30"}
-                                        height={"30"}
-                                        alt="Logo de Laravel"
-                                    />
-                                </Link>
-                                <Link
-                                    href={"https://nextJS.org"}
-                                    target={"_blank"}
-                                    title="Se rendre sur le site de nextJS"
-                                >
-                                    <Image
-                                        src={nextJS}
-                                        width={"30"}
-                                        height={"30"}
-                                        alt="Logo de NextJS"
-                                    />
-                                </Link>
-                                <Link
-                                    href={"https://react.dev/"}
-                                    target={"_blank"}
-                                    title="Se rendre sur le site de React"
-                                >
-                                    <Image
-                                        src={reactJS}
-                                        width={"30"}
-                                        height={"30"}
-                                        alt="Logo de reactJS"
-                                    />
-                                </Link>
-                                <Link
-                                    href={"https://tailwindcss.com/"}
-                                    target={"_blank"}
-                                    title="Se rendre sur le site de TailwindCSS"
-                                >
-                                    <Image
-                                        src={tailwindCSS}
-                                        width={"30"}
-                                        height={"30"}
-                                        alt="Logo de TailwindCSS"
-                                    />
-                                </Link>
-                                <Link
-                                    href={"https://www.typescriptlang.org/"}
-                                    target={"_blank"}
-                                    title="Se rendre sur le site de Typescript"
-                                >
-                                    <Image
-                                        src={typeScript}
-                                        width={"30"}
-                                        height={"30"}
-                                        alt="Logo de Typescript"
-                                    />
-                                </Link>
-                            </div>
+                    <h2 className="lg:pt-0 pb-10">A propos de moi</h2>
+                    <div className="w-full flex justify-center gap-10 flex-col lg:flex-row">
+                        <div className="w-full lg:w-2/5 text-center" data-aos="fade-right">
+                            <Image src={florent_vandroy} alt="Photo de Florent Vandroy" className="rounded-xl w-full" />
                         </div>
-                        <div className="w-full lg:w-2/5 text-center" data-aos="fade-left">
-                            <Image src={florent_vandroy} alt="Photo de Florent Vandroy" />
+                        <div className="lg:pr-10 w-full" data-aos="fade-left">
+                            <p className="text-xl">
+                            En tant que développeur passionné, je suis toujours à la recherche de défis stimulants pour mettre mes compétences techniques et ma créativité au service de projets innovants. Je reste à l'affût des dernières tendances et techs du moment, convaincu que mon expertise pourrait être un autout au seins d'une équipe dynamique et des projets ambitieux. 🚀
+                            </p>
+                           <div className="flex gap-5 justify-between mt-5">
+                                <Counter number="20" text="Technologies terminée" />
+                                <Counter number="64" text="Projets terminée" />
+                                <Counter number="64" text="Language de programmation utilisés" />
+                           </div>
                         </div>
                     </div>
                 </div>
             </section>
-            <section>
-                <div className="pb-10">
-                    <h2 className="py-0" data-aos="fade-up">Mes services.</h2>
-                </div>
-                <div className="grid md:grid-cols-2 grid-cols-1 gap-3 items-start">
-                    <Service
-                        title="Développement de sites web sur mesure"
-                        description="Créez un site web unique et personalisé pour votre entreprise. Je réalise votre vision en concevant un site attrayant, engageant et convivial qui correspond parfaitement à votre identité de marque."
-                        icon={<FontAwesomeIcon icon={faCode} />}
-                    />
-                    <Service
-                        title="Refonte de sites web existants"
-                        description="Donnez une nouvelle vie à votre site web existant. Je modernise votre site en améliorant l'expérience utilisateur, les performances et le design. Une refonte complète qui donnera une apparence moderne et attrayante."
-                        icon={<FontAwesomeIcon icon={faSyncAlt} />}
-                    />
-                    <Service
-                        title="Optimisation des performances"
-                        description="Optimisation des performances pour une navigation rapide et fluide. J'effectue l'optimisation des images, la mise en cache, la compression des fichiers et améliore la vitesse globale du site. Une performance optimale garantit une meilleur expérience utilisateur et favorise le référencement."
-                        icon={<FontAwesomeIcon icon={faRocket} />}
-                    />
-                </div>
-            </section>
-            <section>
-                <div  data-aos="fade-up" className="flex justify-between items-center pb-10">
-                    <h2 className="py-0">Mes derniers projets.</h2>
-                    <Link
-                        href="/realisations"
-                        title="Se rendre sur la page des projets"
-                        className="text-right"
-                    >
-                        Voir tous les projets
-                    </Link>
-                </div>
-                <div className="grid lg:grid-cols-2 grid-cols-1 gap-4">
-                    {projects.map((project, index) => {
+            <section id="recent_projects">
+                <h2 className="py-0 pb-10">Mes projets récents</h2>
+                <div className="grid lg:grid-cols-2 grid-cols-1 gap-5 items-start">
+                    {latestProjects.map((project, index) => {
                         return <Project project={project} key={index} />;
                     })}
                 </div>
             </section>
-            <section>
-                <div data-aos="fade-up" className="flex justify-between items-center pb-10">
-                    <h2 className="py-0">Mes tous les articles.</h2>
+            <section id="projects">
+                <div className="flex justify-between items-center pb-10">
+                    <h2 className="py-0">Tous mes projets</h2>
+                </div>
+                <Carousel 
+                    responsive={responsive}
+                    showDots={true}
+                    ssr={true}
+                    infinite={false}
+                    swipeable={true}
+                    itemClass="mb-5"
+                    removeArrowOnDeviceType={["tablet", "mobile"]}
+                >
+                    {allProjects.map((project, index) => {
+                        return <Portfolio project={project} key={index} />;
+                    })} 
+                </Carousel>
+            </section>
+            <section id="blog">
+                <div className="flex justify-between items-center pb-10">
+                    <h2 className="py-0">Tous mes articles</h2>
                     <Link
                         href="/blog"
                         title="Se rendre sur la page du blog"
@@ -215,12 +139,7 @@ export default function Home({ posts, projects }) {
                     return <Post post={post} key={post.slug} />;
                 })}
             </section>
-            <section>
-                <h2 data-aos="fade-up">Me contacter.</h2>
-                <p data-aos="fade-left">
-                    Vous souhaitez collaborer sur un projet passionnant ? N&apos;h&eacute;sitez pas &agrave; me contacter d&egrave;s maintenant ! <br />
-                    Vous pouvez remplir le formulaire de contact ci-dessous, ou me contacter directement par email <a href="mailto:florentvandroy@gmail.com">florentvandroy@gmail.com</a>.
-                </p>
+            <section id="contact">
                 <Contact />
             </section>
         </Layout>
@@ -228,7 +147,7 @@ export default function Home({ posts, projects }) {
 }
 
 export async function getStaticProps() {
-    var files = fs.readdirSync("posts");
+    const files = fs.readdirSync("posts");
     const posts = files.map((fileName) => {
         const slug = fileName.replace(".md", "");
         const readFile = fs.readFileSync(`posts/${fileName}`, "utf-8");
@@ -246,8 +165,8 @@ export async function getStaticProps() {
         };
     });
 
-    var files = fs.readdirSync("projects");
-    const projects = files.map((fileName) => {
+    const projectFiles = fs.readdirSync("projects");
+    const projects = projectFiles.map((fileName) => {
         const name = fileName.replace(".md", "");
         const readFile = fs.readFileSync(`projects/${fileName}`, "utf-8");
         const { data: frontmatter, content } = matter(readFile);
@@ -265,10 +184,20 @@ export async function getStaticProps() {
         };
     });
 
+    projects.sort((a, b) => {
+        const dateA = new Date(a.frontmatter.date);
+        const dateB = new Date(b.frontmatter.date);
+        return dateB - dateA;
+    });
+
+    const allProjects = projects;
+    const latestProjects = projects.slice(0, 2);
+
     return {
         props: {
             posts: posts.sort(sortByDate).slice(0, 3),
-            projects: projects.sort(sortByDate).slice(0, 4),
+            allProjects: allProjects,
+            latestProjects: latestProjects,
         },
     };
 }

@@ -21,7 +21,8 @@ export default function Layout({
 
     useEffect(() => {
         AOS.init({
-            duration: 2000,
+            duration: 1000,
+            mirror: false
         });
     }, []); 
 
@@ -73,7 +74,7 @@ export default function Layout({
                 <meta name="theme-color" content="#926363" />
             </Head>
             <Header />
-            <main className="max-w-5xl mx-auto px-5">{children}</main>
+            <main className="max-w-5xl mx-auto px-5 scroll-smooth">{children}</main>
             <Footer />
             <Cookies />
         </>
