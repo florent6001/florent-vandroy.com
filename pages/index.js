@@ -90,9 +90,9 @@ export default function Home({ posts, allProjects, latestProjects }) {
                             En tant que développeur passionné, je suis toujours à la recherche de défis stimulants pour mettre mes compétences techniques et ma créativité au service de projets innovants. Je reste à l&apos;affût des dernières tendances et techs du moment, convaincu que mon expertise pourrait être un autout au seins d&apos;une équipe dynamique et des projets ambitieux. 🚀
                             </p>
                            <div className="flex gap-5 justify-between mt-5">
-                                <Counter number="20" text="Technologies terminée" />
-                                <Counter number="64" text="Projets terminée" />
-                                <Counter number="64" text="Language de programmation utilisés" />
+                                <Counter number="10" text="Technologies utilisées" />
+                                <Counter number="15" text="Projets terminée" />
+                                <Counter number="5" text="Language de programmation utilisés" />
                            </div>
                         </div>
                     </div>
