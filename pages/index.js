@@ -69,8 +69,8 @@ export default function Home({ posts, allProjects, latestProjects }) {
                     >
                         Me contacter <AiOutlineSend className="inline" />
                     </Link>
-                    <div className="relative h-[50px]">
-                        <Link href="#about" title="Scroll down" className="dark:text-white text-black bounce block flex gap-3 items-center mt-5 text-xl hover:no-underline">
+                    <div className="relative h-[50px] w-full mx-auto">
+                        <Link href="#about" title="Scroll down" className="w-full dark:text-white text-black bounce block flex gap-3 items-center mt-5 text-xl hover:no-underline">
                             <BiMouse />
                             Scroll down
                             <AiOutlineArrowDown />
@@ -89,6 +89,7 @@ export default function Home({ posts, allProjects, latestProjects }) {
                             <p className="text-xl">
                             En tant que développeur passionné, je suis toujours à la recherche de défis stimulants pour mettre mes compétences techniques et ma créativité au service de projets innovants. Je reste à l&apos;affût des dernières tendances et techs du moment, convaincu que mon expertise pourrait être un autout au seins d&apos;une équipe dynamique et des projets ambitieux. 🚀
                             </p>
+                           <Link href="/cv-florent-vandroy.pdf" class="btn btn-primary mt-5">Télécharger Mon C.V</Link>
                            <div className="flex gap-5 justify-between mt-5">
                                 <Counter number="10" text="Technologies utilisées" />
                                 <Counter number="15" text="Projets terminée" />

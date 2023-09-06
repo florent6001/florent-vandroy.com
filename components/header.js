@@ -136,7 +136,7 @@ export default function Header() {
                                 href="#projects"
                                 title="Se rendre sur la page réalisations"
                             >
-                                Toutes mes réalisations
+                                Mes réalisations
                             </Link>
                         </li>
                         <li
