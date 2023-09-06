@@ -15,8 +15,8 @@ import { useEffect } from "react";
 
 export default function Layout({
     children,
-    pageTitle = "Développeur Web Laravel à Bergerac (Dordogne)",
-    pageDescription = "Florent Vandroy, développeur Laravel à Bergerac (Dordogne) proche de Bordeaux. Création de site internet avec WordPress ou bien Laravel et React (selon les besoins)",
+    pageTitle = "Développeur Web FullStack à Bergerac (Dordogne)",
+    pageDescription = "Le portfolio d'un jeune développeur fullstack passionné par le web, le d&eacute;veloppement et les nouvelles technologies.",
 }) {
 
     useEffect(() => {
