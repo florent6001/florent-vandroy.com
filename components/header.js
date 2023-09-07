@@ -111,7 +111,7 @@ export default function Header() {
                             </Link>
                         </li>
                         <li className={router.pathname.includes("/blog") ? "active" : ""}>
-                            <Link href="#blog" title="Se rendre sur le blog">
+                            <Link href="/#blog" title="Se rendre sur le blog">
                                 Blog
                             </Link>
                         </li>
@@ -121,7 +121,7 @@ export default function Header() {
                             }
                         >
                             <Link
-                                href="#recent_projects"
+                                href="/#recent_projects"
                                 title="Se rendre sur la page réalisations"
                             >
                                 Projets récents
@@ -133,16 +133,28 @@ export default function Header() {
                             }
                         >
                             <Link
-                                href="#projects"
+                                href="/#projects"
                                 title="Se rendre sur la page réalisations"
                             >
                                 Mes réalisations
                             </Link>
                         </li>
                         <li
+                            className={
+                                router.pathname.includes("/realisations") ? "active" : ""
+                            }
+                        >
+                            <Link
+                                href="/#skills"
+                                title="Se rendre sur la page réalisations"
+                            >
+                                Compétences
+                            </Link>
+                        </li>
+                        <li
                             className={router.pathname.includes("/contact") ? "active" : ""}
                         >
-                            <Link href="#contact" title="Se rendre sur la page contact">
+                            <Link href="/#contact" title="Se rendre sur la page contact">
                                 Contact
                             </Link>
                         </li>

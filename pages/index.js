@@ -57,9 +57,9 @@ export default function Home({ posts, allProjects, latestProjects }) {
     return (
         <Layout>
             <section>
-                <p className="text-xl" data-aos="fade-left">Je suis</p>
-                <h1 className="text-5xl lg:text-8xl py-5" data-aos="fade-left" data-aos-delay="500">Florent Vandroy</h1>
-                <h2 className="py-3 text-xl" data-aos="fade-left" data-aos-delay="1000">
+                <p className="text-xl overflow-x-hidden" data-aos="fade-left">Je suis</p>
+                <h1 className="text-5xl lg:text-8xl py-5 overflow-x-hidden" data-aos="fade-left" data-aos-delay="500">Florent Vandroy</h1>
+                <h2 className="py-3 text-xl overflow-x-hidden" data-aos="fade-left" data-aos-delay="1000">
                     Développeur web FullStack
                 </h2>
                 <div className="pt-5">
@@ -83,10 +83,10 @@ export default function Home({ posts, allProjects, latestProjects }) {
                 <div className="w-full">
                     <h2 className="lg:pt-0 pb-10">A propos de moi</h2>
                     <div className="w-full flex justify-center gap-10 flex-col lg:flex-row">
-                        <div className="w-full lg:w-2/5 text-center" data-aos="fade-right">
+                        <div className="w-full lg:w-2/5 text-center overflow-x-hidden" data-aos="fade-right">
                             <Image src={florent_vandroy} alt="Photo de Florent Vandroy" className="rounded-xl w-full" />
                         </div>
-                        <div className="lg:pr-10 w-full" data-aos="fade-left">
+                        <div className="lg:pr-10 w-full overflow-x-hidden" data-aos="fade-left">
                             <p className="text-xl">
                             En tant que développeur passionné, je suis toujours à la recherche de défis stimulants pour mettre mes compétences techniques et ma créativité au service de projets innovants. Je reste à l&apos;affût des dernières tendances et techs du moment, convaincu que mon expertise pourrait être un autout au seins d&apos;une équipe dynamique et des projets ambitieux. 🚀
                             </p>
