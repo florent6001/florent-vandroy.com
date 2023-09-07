@@ -21,6 +21,7 @@ import { useTheme } from "next-themes";
 import Counter from "../components/counter";
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import Skills from "../components/skills";
 
 export default function Home({ posts, allProjects, latestProjects }) {
     const { systemTheme, theme, setTheme } = useTheme();
@@ -124,6 +125,11 @@ export default function Home({ posts, allProjects, latestProjects }) {
                         return <Portfolio project={project} key={index} />;
                     })} 
                 </Carousel>
+            </section>
+            <section id="skills">
+                <h2 className="py-1">Mes compétences</h2>
+                <p class="text-sm">Outils avec lesquelles j&apos;ai déjà travaillé.</p>
+                <Skills />
             </section>
             <section id="blog">
                 <div className="flex justify-between items-center pb-10">
