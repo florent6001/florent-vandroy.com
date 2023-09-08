@@ -13,7 +13,7 @@ import fs from "fs";
 import matter from "gray-matter";
 import Link from "next/link";
 import Image from "next/image";
-import { BiMouse } from 'react-icons/bi';
+import { BiCodeAlt, BiMouse } from 'react-icons/bi';
 import { AiOutlineArrowDown, AiOutlineSend } from "react-icons/ai";
 
 import { sortByDate } from "../utils/sortByDate";
@@ -57,7 +57,7 @@ export default function Home({ posts, allProjects, latestProjects }) {
     return (
         <Layout>
             <section>
-                <p className="text-xl overflow-x-hidden" data-aos="fade-left">Je suis</p>
+                <p className="text-xl overflow-x-hidden flex gap-4  justify-between" >Je suis <span className="text-3xl"><BiCodeAlt /></span></p>
                 <h1 className="text-5xl lg:text-8xl py-5 overflow-x-hidden" data-aos="fade-left" data-aos-delay="500">Florent Vandroy</h1>
                 <h2 className="py-3 text-xl overflow-x-hidden" data-aos="fade-left" data-aos-delay="1000">
                     Développeur web FullStack
@@ -88,9 +88,10 @@ export default function Home({ posts, allProjects, latestProjects }) {
                         </div>
                         <div className="lg:pr-10 w-full overflow-x-hidden" data-aos="fade-left">
                             <p className="text-xl">
-                            En tant que développeur passionné, je suis toujours à la recherche de défis stimulants pour mettre mes compétences techniques et ma créativité au service de projets innovants. Je reste à l&apos;affût des dernières tendances et techs du moment, convaincu que mon expertise pourrait être un autout au seins d&apos;une équipe dynamique et des projets ambitieux. 🚀
+                              En tant que développeur passionné, je suis toujours à la recherche de défis stimulants pour mettre mes compétences techniques et ma créativité au service de projets innovants.
+                              Je reste à l&apos;affût des dernières tendances et techs du moment, convaincu que mon expertise sera un atout au sein d&apos;une équipe dynamique. 🚀
                             </p>
-                           <Link href="/cv-florent-vandroy.pdf" class="btn btn-primary mt-5">Télécharger Mon C.V</Link>
+                           <Link href="/cv-florent-vandroy.pdf" className="btn btn-primary mt-5">Télécharger Mon C.V</Link>
                            <div className="flex gap-5 justify-between mt-5">
                                 <Counter number="10" text="Technologies utilisées" />
                                 <Counter number="15" text="Projets terminée" />
@@ -110,9 +111,9 @@ export default function Home({ posts, allProjects, latestProjects }) {
             </section>
             <section id="projects">
                 <div className="flex justify-between items-center pb-10">
-                    <h2 className="py-0">Tous mes projets</h2>
+                    <h2 className="py-0">Toutes mes réalisations</h2>
                 </div>
-                <Carousel 
+                <Carousel
                     responsive={responsive}
                     showDots={true}
                     ssr={true}
@@ -123,12 +124,12 @@ export default function Home({ posts, allProjects, latestProjects }) {
                 >
                     {allProjects.map((project, index) => {
                         return <Portfolio project={project} key={index} />;
-                    })} 
+                    })}
                 </Carousel>
             </section>
             <section id="skills">
                 <h2 className="py-1">Mes compétences</h2>
-                <p class="text-sm">Outils avec lesquelles j&apos;ai déjà travaillé.</p>
+                <p className="text-sm">Outils avec lesquelles j&apos;ai déjà travaillé.</p>
                 <Skills />
             </section>
             <section id="blog">
