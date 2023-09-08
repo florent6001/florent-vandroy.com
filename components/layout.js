@@ -15,8 +15,8 @@ import { useEffect } from "react";
 
 export default function Layout({
     children,
-    pageTitle = "Développeur Web FullStack à Bergerac (Dordogne)",
-    pageDescription = "Le portfolio d'un jeune développeur fullstack passionné par le web, le d&eacute;veloppement et les nouvelles technologies.",
+    pageTitle = "Développeur Web full-stack à Bergerac (Dordogne)",
+    pageDescription = "Le portfolio d'un jeune développeur full-stack passionné par le web, le d&eacute;veloppement et les nouvelles technologies.",
 }) {
 
     useEffect(() => {
