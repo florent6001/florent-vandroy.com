@@ -62,21 +62,21 @@ export default function Contact() {
                         <i className="text-4xl pr-3"><BiPhone /></i>
                         <p>
                             <span className="font-bold text-xl">Téléphone</span> <br />
-                            <span className="text-muted"><a href="tel:+33603000082" className="text-white">06 03 00 82 01</a></span>
-                        </p> 
+                            <span className="text-muted"><a href="tel:+33603000082" className="text-black dark:text-white">06 03 00 82 01</a></span>
+                        </p>
                     </div>
                     <div className="flex">
                         <i className="text-4xl pr-3"><BiMailSend /></i>
                         <p>
                            <span className="font-bold text-xl">Adresse email</span> <br />
-                            <span className="text-muted"><a href="mailto:florentvandroy@gmail.com" className='text-white'>florentvandroy@gmail.com</a></span>
-                        </p> 
+                            <span className="text-muted"><a href="mailto:florentvandroy@gmail.com" className='text-black dark:text-white'>florentvandroy@gmail.com</a></span>
+                        </p>
                     </div>
                     <div className="flex">
                         <i className="text-4xl pr-3"><BiMapPin /></i>
                         <p>
                             <span className="font-bold text-xl">Localisation</span> <br />
-                            <span className="text-muted"><a href="https://www.google.com/maps/place/24100+Bergerac/data=!4m2!3m1!1s0x12aad07c6048f55f:0xd23474adfc552221?sa=X&ved=2ahUKEwiQyJ7luZaBAxXmRaQEHaOXCmkQ8gF6BAgPEAA&ved=2ahUKEwiQyJ7luZaBAxXmRaQEHaOXCmkQ8gF6BAgQEAI" className="text-white">Bergerac 24100</a></span>
+                            <span className="text-muted"><a href="https://www.google.com/maps/place/24100+Bergerac/data=!4m2!3m1!1s0x12aad07c6048f55f:0xd23474adfc552221?sa=X&ved=2ahUKEwiQyJ7luZaBAxXmRaQEHaOXCmkQ8gF6BAgPEAA&ved=2ahUKEwiQyJ7luZaBAxXmRaQEHaOXCmkQ8gF6BAgQEAI" className="text-black dark:text-white">Bergerac 24100</a></span>
                         </p>
                     </div>
                 </div>
