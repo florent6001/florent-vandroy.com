@@ -60,7 +60,7 @@ export default function Home({ posts, allProjects, latestProjects }) {
                 <p className="text-xl overflow-x-hidden flex gap-4  justify-between" >Je suis <span className="text-3xl"><BiCodeAlt /></span></p>
                 <h1 className="text-5xl lg:text-8xl py-5 overflow-x-hidden" data-aos="fade-left" data-aos-delay="500">Florent Vandroy</h1>
                 <h2 className="py-3 text-xl overflow-x-hidden" data-aos="fade-left" data-aos-delay="1000">
-                    Développeur web FullStack
+                    Développeur web full-stack
                 </h2>
                 <div className="pt-5">
                     <Link
