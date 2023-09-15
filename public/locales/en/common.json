@@ -93,5 +93,18 @@
   "home_skills_title": "My Skills",
   "home_skill_text": "Tools I have worked with",
   "home_all_my_posts": "All my articles",
-  "home_see_more_posts": "See more articles"
+  "home_see_more_posts": "See more articles",
+  "cookie_essential_title": "Essential",
+  "cookie_essential_text": "Essential cookies are necessary for the proper functioning of the website. The website cannot function properly without them.",
+  "cookie_analytics_title": "Google Analytics",
+  "cookie_analytics_text": "Google Analytics is a statistical tool from Google that allows you to measure the audience of a website.",
+  "cookie_hotjar_title": "Hotjar",
+  "cookie_hotjar_text": "Hotjar is a marketing tool that allows you to analyze the behavior of website visitors using a set of advanced features.",
+  "cookie_banner_title": "This website uses cookies.",
+  "cookie_banner_text": "We use cookies to improve the website's functionality and to see how you interact with it. We will use cookies only if you allow us by clicking \"Accept all cookies\". You can also choose which cookies you want to allow.",
+  "cookie_cancel_btn": "Cancel",
+  "cookie_accept_selected_cookies": "Accept selected cookies",
+  "cookie_choose_btn": "Choose my cookies",
+  "cookie_decline_btn": "Decline",
+  "cookie_accept_all": "Accept all cookies"
 }

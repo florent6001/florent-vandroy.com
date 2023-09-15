@@ -1,5 +1,6 @@
 import Script from "next/script";
 import { useEffect, useState } from "react";
+import { useTranslation } from "next-i18next";
 
 export default function Cookies() {
   const [acceptedCookies, setAcceptedCookies] = useState([]);
@@ -10,25 +11,26 @@ export default function Cookies() {
   var expireTime = time + 180 * 24 * 60 * 60 * 1000; // Six months
   now.setTime(expireTime);
   let cookieExpiration = now.toUTCString();
+  const { t } = useTranslation();
 
   const cookies = [
     {
       name: "essentiel",
       required: true,
-      title: "Essentiel",
-      text: "Les cookies essentiels sont nécessaires au bon fonctionnement du site. Le site ne peut pas fonctionner correctement sans eux.",
+      title: t('cookie_essential_title'),
+      text: t('cookie_essential_text'),
     },
     {
       name: "google_analytics",
       required: false,
-      title: "Google Analytics",
-      text: "Google Analytics est un outil statistique de Google permettant de mesurer l'audience du site internet.",
+      title: t('cookie_analytics_title'),
+      text: t('cookie_analytics_text'),
     },
     {
       name: "hotjar",
       required: false,
-      title: "Hotjar",
-      text: "Hotjar est un outil marketing qui permet d'analyser le comportement des visiteurs du site web grâce à un ensemble de fonctionnalités avancées.",
+      title: t('cookie_hotjar_title'),
+      text: t('cookie_hotjar_text'),
     },
   ];
 
@@ -97,19 +99,14 @@ export default function Cookies() {
         <div className="fixed w-full h-auto bottom-0 bg-gray-300 dark:bg-gray-800 py-10 overflow-y-scroll max-h-screen">
           <div className="max-w-7xl mx-auto px-5">
             <p className="text-3xl text-primary py-5">
-              Ce site internet utilise des cookies.
+              { t('cookie_banner_title') }
             </p>
             <p>
-              Nous utilisons les cookies pour améliorer le fonctionnement du
-              site, mais également pour voir comment vous interagissez avec
-              celui-ci. Nous utiliserons les cookies uniquement si vous nous le
-              permettez en cliquant sur &ldquo;Accepter les cookies&ldquo;. Vous
-              pouvez également choisir quel cookie vous souhaitez autoriser.
+              { t('cookie_banner_text') }
             </p>
             <div id="personalize-cookies" className="hidden">
               <div
-                className="lg:grid grid-cols-2 gap-5 lg:pt-10
-                            -10"
+                className="lg:grid grid-cols-2 gap-5 lg:pt-10"
               >
                 {cookies.map((cookie) => (
                   <div key={cookie.name} className="mt-10 lg:mt-0">
@@ -142,13 +139,13 @@ export default function Cookies() {
                   className="btn btn-secondary w-fit h-fit mt-5"
                   onClick={personalizeCookies}
                 >
-                  Annuler
+                  { t('cookie_cancel_btn') }
                 </button>
                 <button
                   className="btn btn-primary w-fit h-fit mt-5"
                   onClick={acceptPersonalizedCookies}
                 >
-                  Accepter les cookies selectionnés
+                  { t('cookie_accept_selected_cookies') }
                 </button>
               </div>
             </div>
@@ -156,19 +153,19 @@ export default function Cookies() {
               className="lg:flex justify-between items-center pt-5"
               id="cookies-buttons"
             >
-              <button onClick={personalizeCookies}>Choisir mes cookies</button>
+              <button onClick={personalizeCookies}>{ t('cookie_choose_btn') }</button>
               <div className="lg:grid grid-cols-2 gap-3 mt-5 lg:mt-0">
                 <button
                   className="btn btn-secondary w-fit justify-self-end"
                   onClick={denyCookies}
                 >
-                  Refuser
+                  { t('cookie_decline_btn') }
                 </button>
                 <button
                   className="btn btn-primary w-fit"
                   onClick={acceptCookies}
                 >
-                  Accepter les cookies
+                  { t('cookie_accept_all') }
                 </button>
               </div>
             </div>

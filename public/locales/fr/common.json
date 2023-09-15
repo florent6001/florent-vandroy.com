@@ -91,7 +91,20 @@
   "home_recent_projects_title": "Mes projets récents",
   "home_achievements_tile": "Toutes mes réalisations",
   "home_skills_title": "Mes compétences",
-  "home_skill_text": "Outils avec lesquelles j&apos;ai déjà travaillé.",
+  "home_skill_text": "Outils avec lesquelles j'ai déjà travaillé.",
   "home_all_my_posts": "Tous mes articles",
-  "home_see_more_posts": "Voir plus d'articles"
+  "home_see_more_posts": "Voir plus d'articles",
+  "cookie_essential_title": "Essentiel",
+  "cookie_essential_text": "Les cookies essentiels sont nécessaires au bon fonctionnement du site. Le site ne peut pas fonctionner correctement sans eux.",
+  "cookie_analytics_title": "Google Analytics",
+  "cookie_analytics_text": "Google Analytics est un outil statistique de Google permettant de mesurer l'audience du site internet.",
+  "cookie_hotjar_title": "Hotjar",
+  "cookie_hotjar_text": "Hotjar est un outil marketing qui permet d'analyser le comportement des visiteurs du site web grâce à un ensemble de fonctionnalités avancées.",
+  "cookie_banner_title": "Ce site internet utilise des cookies.",
+  "cookie_banner_text": "Nous utilisons les cookies pour améliorer le fonctionnement du site, mais également pour voir comment vous interagissez avec celui-ci. Nous utiliserons les cookies uniquement si vous nous le permettez en cliquant sur \"Accepter les cookies\". Vous pouvez également choisir quel cookie vous souhaitez autoriser.",
+  "cookie_cancel_btn": "Annuler",
+  "cookie_accept_selected_cookies": "Accepter les cookies selectionnés",
+  "cookie_choose_btn": "Choisir mes cookies",
+  "cookie_decline_btn": "Refuser",
+  "cookie_accept_all": "Accepter les cookies"
 }
