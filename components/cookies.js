@@ -1,6 +1,5 @@
-import Head from "next/head";
-import { useCallback, useEffect, useState } from "react";
 import Script from "next/script";
+import { useEffect, useState } from "react";
 
 export default function Cookies() {
   const [acceptedCookies, setAcceptedCookies] = useState([]);

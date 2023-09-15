@@ -1,7 +1,13 @@
 import Link from "next/link";
-import md from "markdown-it";
+import { useTranslation } from "next-i18next";
+import { useRouter } from "next/router";
 
-export default function project({ project }) {
+export default function Project({ project }) {
+
+  const { t } = useTranslation();
+  const router = useRouter();
+  const descriptionKey = `description_${router.locale}`;
+
   return (
     <div
       className="w-full project h-full"
@@ -16,30 +22,29 @@ export default function project({ project }) {
           <div className="flex lg:flex-row gap-2 my-4">
             {project.frontmatter.demo && (
               <Link
-                title="Voir le projet"
+                title={t('portfolio_demo_title')}
                 href={project.frontmatter.demo}
                 target={"_blank"}
                 className="btn btn-primary"
                 itemProp="url"
               >
-                Voir le site
+                {t('portfolio_demo')}
               </Link>
             )}
             {project.frontmatter.source && (
               <Link
-                title="Voir le code source du projet"
+                title={t('portfolio_source_code_title')}
                 href={project.frontmatter.source}
                 target={"_blank"}
                 className="btn btn-primary"
               >
-                Code source
+                {t('portfolio_source_code')}
               </Link>
             )}
           </div>
-          <div
-            dangerouslySetInnerHTML={{ __html: md().render(project.content) }}
-            itemProp="description"
-          />
+          <div itemProp="description">
+            {project.frontmatter[descriptionKey]}
+          </div>
         </div>
       </div>
     </div>

@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import { useEffect } from "react";
 import * as gtag from "../lib/gtag";
 import { ThemeProvider } from "next-themes";
+import { appWithTranslation } from 'next-i18next'
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
@@ -35,4 +36,4 @@ function MyApp({ Component, pageProps }) {
   );
 }
 
-export default MyApp;
+export default appWithTranslation(MyApp);
