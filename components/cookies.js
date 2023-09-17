@@ -51,13 +51,13 @@ export default function Cookies() {
 
   const acceptCookies = () => {
     cookies.map((cookie) => {
-      document.cookie = `${cookie.name}=true;expires=${cookieExpiration}`;
+      document.cookie = `${cookie.name}=true;domain="florent-vandroy.fr";expires=${cookieExpiration}`;
     });
     setDisplayCookies(false);
   };
 
   const denyCookies = () => {
-    document.cookie = `essentiel=true;expires=${cookieExpiration}`;
+    document.cookie = `essentiel=true;domain="florent-vandroy.fr";expires=${cookieExpiration}`;
     setDisplayCookies(false);
   };
 
@@ -65,7 +65,7 @@ export default function Cookies() {
     cookies.map((cookie) => {
       let input = document.getElementById(cookie.name);
       if (input.checked) {
-        document.cookie = `${cookie.name}=true;expires=${cookieExpiration}`;
+        document.cookie = `${cookie.name}=true;domain="florent-vandroy.fr";expires=${cookieExpiration}`;
       }
     });
     setDisplayCookies(false);
