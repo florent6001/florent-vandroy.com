@@ -13,7 +13,7 @@ export default function PostPage({ frontmatter, content, date }) {
   return (
     <Layout
       pageTitle={frontmatter.title}
-      pageDescription={ content.slice((content.indexOf('Introduction') + 13), 200) + ' ...' }
+      pageDescription={ content.slice((content.indexOf('Introduction') + 13), 140) + ' ...' }
     >
       <div itemScope itemType="https://schema.org/BlogPosting" className="py-5 my-5">
         <h1 className="text-center pb-4" itemProp="Headline">
