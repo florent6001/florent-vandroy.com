@@ -20,6 +20,30 @@ export default function Header() {
     setMounted(true);
   }, []);
 
+  const renderLanguageSwitcher = () => {
+    if (!mounted) return null;
+
+    const currentLanguage = router.locale;
+
+    if(currentLanguage == 'fr') {
+      return(
+        <li className="cursor-pointer">
+          <Link href="/" locale="en">
+            <Image src="http://purecatamphetamine.github.io/country-flag-icons/3x2/GB.svg" alt="GB flag" width={35} height={20} />
+          </Link>
+        </li>
+      )
+    } else {
+      return (
+        <li className="cursor-pointer">
+          <Link href="/" locale="fr">
+            <Image src="http://purecatamphetamine.github.io/country-flag-icons/3x2/FR.svg" alt="French flag" width={35} height={20} />
+          </Link>
+        </li>
+      )
+    }
+  }
+
   const renderThemeChanger = () => {
     if (!mounted) return null;
 
@@ -163,6 +187,7 @@ export default function Header() {
               </Link>
             </li>
             {renderThemeChanger()}
+            {renderLanguageSwitcher()}
           </ul>
         </nav>
       </div>
