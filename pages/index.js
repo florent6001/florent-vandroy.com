@@ -50,7 +50,7 @@ export default function Home({ posts, allProjects, latestProjects }) {
     <Layout>
       <section>
         <p className="text-xl overflow-x-hidden flex gap-4 items-center" >
-          <Image src={logo_le_wagon} alt="Le Wagon Logo" className="rounded-xl w-full h-10 w-10" />
+          <Image src={logo_le_wagon} alt="Le Wagon Logo" className="rounded-xl h-10 w-10" />
           Batch #1598 Online - {t('home_jumbotron_intro')}
         </p>
         <h1 className="text-5xl lg:text-8xl py-3 overflow-x-hidden" data-aos="fade-left" data-aos-delay="500">{t('home_jumbotron_title')}</h1>
