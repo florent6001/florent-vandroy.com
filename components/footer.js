@@ -26,6 +26,11 @@ export default function Footer() {
         </ul>
         <ul className="flex lg:flex-row flex-col-reverseitems-center justify-center gap-5 text-xl">
           <li>
+            <Link href="https://twitter.com/Florent_Vandroy" title={t('goto_page')} target="_blank">
+              <FaTwitter />
+            </Link>
+          </li>
+          <li>
             <Link href="https://www.linkedin.com/in/florent-vandroy" title={t('goto_page')} target="_blank">
               <FaLinkedin />
             </Link>
@@ -33,11 +38,6 @@ export default function Footer() {
           <li>
             <Link href="https://github.com/florent6001" title={t('goto_page')} target="_blank">
               <FaGithub />
-            </Link>
-          </li>
-          <li>
-            <Link href="https://twitter.com/Florent_Vandroy" title={t('goto_page')} target="_blank">
-              <FaTwitter />
             </Link>
           </li>
         </ul>

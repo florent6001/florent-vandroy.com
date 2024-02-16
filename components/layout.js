@@ -2,7 +2,6 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 import Head from "next/head";
-import Cookies from "./cookies";
 import Header from "../components/header";
 import Footer from "../components/footer";
 import background from "../public/images/background.png";
@@ -91,7 +90,6 @@ export default function Layout({
       <Header />
       <main className="max-w-5xl mx-auto px-5 scroll-smooth">{children}</main>
       <Footer />
-      <Cookies />
     </>
   );
 }

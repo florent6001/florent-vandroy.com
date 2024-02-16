@@ -16,11 +16,6 @@ export default function Privacy_policy() {
         <p>{t('privacy_policy_intro_1')}</p>
         <p>{t('privacy_policy_intro_2')}</p>
         <p>{t('privacy_policy_intro_3')}</p>
-        <h2>{t('privacy_policy_personal_info')}</h2>
-        <p>{t('privacy_policy_auto_info')}</p>
-        <h2>{t('privacy_policy_why_process_data')}</h2>
-        <p>{t('privacy_policy_data_security')}</p>
-        <p>{t('privacy_policy_data_collection')}</p>
         <h2>{t('privacy_policy_your_rights')}</h2>
         <ul className="list-disc pl-12">
           <li>{t('privacy_policy_right_to_be_informed')}</li>

@@ -149,18 +149,6 @@ export default function Header() {
               }
             >
               <Link
-                href="/#recent_projects"
-                title={t('goto_page')}
-              >
-                {t('navbar_recent_projects')}
-              </Link>
-            </li>
-            <li
-              className={
-                router.pathname.includes("/realisations") ? "active" : ""
-              }
-            >
-              <Link
                 href="/#projects"
                 title={t('goto_page')}
               >

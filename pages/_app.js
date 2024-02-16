@@ -2,7 +2,6 @@ import "../styles/globals.css";
 
 import { useRouter } from "next/router";
 import { useEffect } from "react";
-import * as gtag from "../lib/gtag";
 import { ThemeProvider } from "next-themes";
 import { appWithTranslation } from 'next-i18next'
 
@@ -14,10 +13,6 @@ function MyApp({ Component, pageProps }) {
     const handleRouteChange = (url) => {
       navbar.classList.remove("fixed");
       navbar.classList.add("hidden");
-      if (document.cookie.indexOf("google_analytics") !== -1) {
-        gtag.pageview(url);
-      } else {
-      }
     };
 
     router.events.on("routeChangeComplete", handleRouteChange);

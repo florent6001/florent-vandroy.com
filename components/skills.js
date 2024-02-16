@@ -1,6 +1,6 @@
 import React from 'react';
-import { SiCodeigniter, SiRuby, SiRubyonrails } from "react-icons/si";
-import { TbBrandReact, TbBrandJavascript, TbBrandHtml5, TbBrandCss3, TbBrandPhp, TbBrandLaravel, TbBrandSymfony, TbBrandNextjs, TbBrandReactNative, TbBrandSass, TbBrandGatsby } from "react-icons/tb";
+import { SiHeroku, SiRuby, SiRubyonrails } from "react-icons/si";
+import { TbBrandReact, TbBrandJavascript, TbBrandHtml5, TbBrandCss3, TbBrandPhp, TbBrandLaravel, TbBrandNextjs, TbBrandReactNative, TbBrandSass, TbBrandGatsby, TbBrandGithub, TbBrandFigma, TbSql } from "react-icons/tb";
 
 export default function Skills() {
 
@@ -8,17 +8,17 @@ export default function Skills() {
     { label: 'HTML', icon: <TbBrandHtml5 />, color: '#f06529' },
     { label: 'CSS', icon: <TbBrandCss3 />, color: '#264de4' },
     { label: 'Sass', icon: <TbBrandSass />, color: '#c69' },
-    { label: 'JavaScript', icon: <TbBrandJavascript />, color: '#f0db4f' },
-    { label: 'GatsbyJS', icon: <TbBrandGatsby />, color: 'rebeccapurple' },
-    { label: 'React', icon: <TbBrandReact />, color: '#61DBFB' },
-    { label: 'React Native', icon: <TbBrandReactNative />, color: '#61dbfb' },
-    { label: 'NextJS', icon: <TbBrandNextjs /> },
-    { label: 'PHP', icon: <TbBrandPhp />, color: '#8993be' },
-    { label: 'CodeIgniter', icon: <SiCodeigniter />, color: '#dd4814' },
-    { label: 'Laravel', icon: <TbBrandLaravel />, color: '#F05340' },
-    { label: 'Symfony', icon: <TbBrandSymfony /> },
+    { label: 'JavaScript', icon: <TbBrandJavascript />, color: '#F05340' },
     { label: 'Ruby', icon: <SiRuby />, color: "#820C02" },
     { label: 'Ruby On Rails', icon: <SiRubyonrails />, color: '#CC0000' },
+    { label: 'PHP', icon: <TbBrandPhp />, color: '#8993be' },
+    { label: 'Laravel', icon: <TbBrandLaravel />, color: '#F05340' },
+    { label: 'GatsbyJS', icon: <TbBrandGatsby />, color: 'rebeccapurple' },
+    { label: 'NextJS', icon: <TbBrandNextjs /> },
+    { label: 'GitHub', icon: <TbBrandGithub />, color: '#24292e' },
+    { label: 'Figma', icon: <TbBrandFigma />, color: '#ff7262' },
+    { label: 'Heroku', icon: <SiHeroku />, color: '#6567a5' },
+    { label: 'PostgreSQL / SQLite', icon: <TbSql />, color: '#0064a5' },
   ];
 
   return (

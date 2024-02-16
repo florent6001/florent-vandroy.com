@@ -1,16 +1,16 @@
 import Post from "../components/post";
 import Layout from "../components/layout";
 import Contact from "../components/contact";
-import Project from "../components/project";
 import Portfolio from "../components/portfolio";
 
 import florent_vandroy from "../public/images/florent-vandroy.png";
+import logo_le_wagon from "../public/images/logo_le_wagon.png";
 
 import fs from "fs";
 import Link from "next/link";
 import Image from "next/image";
 import matter from "gray-matter";
-import { BiCodeAlt, BiMouse } from 'react-icons/bi';
+import { BiMouse } from 'react-icons/bi';
 import { AiOutlineArrowDown, AiOutlineSend } from "react-icons/ai";
 
 import { useTheme } from "next-themes";
@@ -49,8 +49,11 @@ export default function Home({ posts, allProjects, latestProjects }) {
   return (
     <Layout>
       <section>
-        <p className="text-xl overflow-x-hidden flex gap-4  justify-between" >{t('home_jumbotron_intro')} <span className="text-3xl"><BiCodeAlt /></span></p>
-        <h1 className="text-5xl lg:text-8xl py-5 overflow-x-hidden" data-aos="fade-left" data-aos-delay="500">{t('home_jumbotron_title')}</h1>
+        <p className="text-xl overflow-x-hidden flex gap-4 items-center" >
+          <Image src={logo_le_wagon} alt="Le Wagon Logo" className="rounded-xl w-full h-10 w-10" />
+          Batch #1598 Online - {t('home_jumbotron_intro')}
+        </p>
+        <h1 className="text-5xl lg:text-8xl py-3 overflow-x-hidden" data-aos="fade-left" data-aos-delay="500">{t('home_jumbotron_title')}</h1>
         <h2 className="py-3 text-xl overflow-x-hidden" data-aos="fade-left" data-aos-delay="1000">
           {t('home_jumbotron_text')}
         </h2>
@@ -92,13 +95,10 @@ export default function Home({ posts, allProjects, latestProjects }) {
           </div>
         </div>
       </section>
-      <section id="recent_projects">
-        <h2 className="py-0 pb-10">{t('home_recent_projects_title')}</h2>
-        <div className="grid lg:grid-cols-2 grid-cols-1 gap-5 items-start">
-          {latestProjects.map((project, index) => {
-            return <Project project={project} key={index} />;
-          })}
-        </div>
+      <section id="skills">
+        <h2 className="py-1">{t('home_skills_title')}</h2>
+        <p className="text-sm">{t('home_skill_text')}</p>
+        <Skills />
       </section>
       <section id="projects">
         <div className="flex justify-between items-center pb-10">
@@ -117,11 +117,6 @@ export default function Home({ posts, allProjects, latestProjects }) {
             return <Portfolio project={project} key={index} />;
           })}
         </Carousel>
-      </section>
-      <section id="skills">
-        <h2 className="py-1">{t('home_skills_title')}</h2>
-        <p className="text-sm">{t('home_skill_text')}</p>
-        <Skills />
       </section>
       <section id="blog">
         <div className="flex justify-between items-center pb-10">
@@ -150,8 +145,7 @@ export async function getStaticProps({ locale }) {
   let locales = ['fr', 'en'];
   const posts = [];
 
-  if(locale != 'default')
-  {
+  if (locale != 'default') {
     locales = [locale]
   }
 
@@ -204,14 +198,12 @@ export async function getStaticProps({ locale }) {
     return dateB - dateA;
   });
 
-  const allProjects = projects.slice(2);
-  const latestProjects = projects.slice(0, 2);
+  const allProjects = projects;
 
   return {
     props: {
       posts: posts.sort(sortByDate).slice(0, 3),
       allProjects: allProjects,
-      latestProjects: latestProjects,
       ...(await serverSideTranslations(locale)),
     },
   };

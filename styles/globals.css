@@ -80,7 +80,7 @@ main a {
 }
 
 .react-multi-carousel-dot--active button {
-  @apply bg-primary border-primary !important;
+  @apply bg-black border-black !important;
 }
 
 section {
