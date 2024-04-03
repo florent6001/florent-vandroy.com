@@ -2,6 +2,10 @@
   "name": "florent-vandroy.fr",
   "version": "0.1.0",
   "private": true,
+  "engines" : {
+    "npm" : "10.2.4",
+    "node" : "20.11.1"
+  },
   "scripts": {
     "dev": "next dev",
     "postbuild": "next-sitemap",
