@@ -55,7 +55,7 @@ export default function Layout({
         <meta property={"og:locale"} content={router.locale} />
         <meta
           property={"og:url"}
-          content={`https://www.florent-vandroy.com${locationpath}`}
+          content={`https://www.florent-vandroy.com/`}
         />
         <meta property={"og:type"} content={"website"} />
         <meta
