@@ -29,43 +29,31 @@ export default function Blog({ posts }) {
 }
 
 export async function getStaticProps({ locale }) {
-  let locales = ['fr', 'en'];
-  const posts = [];
+  const currentLocale = locale == 'default' ? 'en' : 'fr'
+  const files = fs.readdirSync(`posts/${currentLocale}`);
 
-  if(locale != 'default')
-  {
-    locales = [locale]
-  }
-
-
-  for (const currentLocale of locales) {
-    const files = fs.readdirSync(`posts/${currentLocale}`);
-
-    const localePosts = files.map((fileName) => {
-      const slug = fileName.replace('.md', '');
-      const readFile = fs.readFileSync(`posts/${currentLocale}/${fileName}`, 'utf-8');
-      const { data: frontmatter } = matter(readFile);
-      const date = new Date(frontmatter.date).toLocaleDateString(currentLocale, {
-        day: 'numeric',
-        year: 'numeric',
-        month: 'long',
-      });
-
-      return {
-        slug,
-        frontmatter,
-        date,
-        locale: currentLocale, // Add the locale information
-      };
+  const posts = files.map((fileName) => {
+    const slug = fileName.replace('.md', '');
+    const readFile = fs.readFileSync(`posts/${currentLocale}/${fileName}`, 'utf-8');
+    const { data: frontmatter } = matter(readFile);
+    const date = new Date(frontmatter.date).toLocaleDateString(currentLocale, {
+      day: 'numeric',
+      year: 'numeric',
+      month: 'long',
     });
 
-    posts.push(...localePosts);
-  }
-
+    return {
+      slug,
+      frontmatter,
+      date,
+      locale: currentLocale, // Add the locale information
+    };
+  });
 
   return {
     props: {
       posts: posts.sort(sortByDate),
+      locale: currentLocale,
       ...await serverSideTranslations(locale),
     },
   };

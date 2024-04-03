@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://www.florent-vandroy.fr
+Host: https://www.florent-vandroy.com/
 
 # Sitemaps
-Sitemap: https://www.florent-vandroy.fr/sitemap.xml
+Sitemap: https://www.florent-vandroy.com/sitemap.xml

@@ -1,7 +1,7 @@
 import Post from "../components/post";
 import Layout from "../components/layout";
 import Contact from "../components/contact";
-import Portfolio from "../components/portfolio";
+import Project from "../components/project";
 
 import florent_vandroy from "../public/images/florent-vandroy.png";
 import logo_le_wagon from "../public/images/logo_le_wagon.png";
@@ -22,7 +22,7 @@ import { useTranslation } from "next-i18next";
 import { sortByDate } from "../utils/sortByDate";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
-export default function Home({ posts, allProjects, latestProjects }) {
+export default function Home({ posts, allProjects, latestProjects, locale }) {
 
   const { systemTheme, theme, setTheme } = useTheme();
   const currentTheme = theme === "system" ? systemTheme : theme;
@@ -59,7 +59,7 @@ export default function Home({ posts, allProjects, latestProjects }) {
         </h2>
         <div className="pt-5">
           <Link
-            href="/#contact"
+            href="#contact"
             title={t('goto_page')}
             className="btn btn-primary btn-lg block"
           >
@@ -85,7 +85,7 @@ export default function Home({ posts, allProjects, latestProjects }) {
               <p className="text-xl">
                 {t('home_about_me_text')}
               </p>
-              <Link href="/cv-florent-vandroy.pdf" className="btn btn-primary mt-5">{t('home_about_download_resume')}</Link>
+              <Link locale={false} href="/cv-florent-vandroy.pdf" className="btn btn-primary mt-5">{t('home_about_download_resume')}</Link>
               <div className="flex gap-5 justify-between mt-5">
                 <Counter number="10" text={t('home_about_technologies_used')} />
                 <Counter number="15" text={t('home_about_project_done')} />
@@ -114,7 +114,7 @@ export default function Home({ posts, allProjects, latestProjects }) {
           removeArrowOnDeviceType={["tablet", "mobile"]}
         >
           {allProjects.map((project, index) => {
-            return <Portfolio project={project} key={index} />;
+            return <Project project={project} locale={locale} key={index} />;
           })}
         </Carousel>
       </section>
@@ -141,37 +141,25 @@ export default function Home({ posts, allProjects, latestProjects }) {
 }
 
 export async function getStaticProps({ locale }) {
+  const currentLocale = locale == 'fr' ? 'fr' : 'en'
+  const files = fs.readdirSync(`posts/${currentLocale}`);
 
-  let locales = ['fr', 'en'];
-  const posts = [];
-
-  if (locale != 'default') {
-    locales = [locale]
-  }
-
-
-  for (const currentLocale of locales) {
-    const files = fs.readdirSync(`posts/${currentLocale}`);
-
-    const localePosts = files.map((fileName) => {
-      const slug = fileName.replace(".md", "");
-      const readFile = fs.readFileSync(`posts/${currentLocale}/${fileName}`, "utf-8");
-      const { data: frontmatter } = matter(readFile);
-      const date = new Date(frontmatter.date).toLocaleDateString("fr-FR", {
-        day: "numeric",
-        year: "numeric",
-        month: "long",
-      });
-
-      return {
-        slug,
-        frontmatter,
-        date,
-      };
+  const posts = files.map((fileName) => {
+    const slug = fileName.replace(".md", "");
+    const readFile = fs.readFileSync(`posts/${currentLocale}/${fileName}`, "utf-8");
+    const { data: frontmatter } = matter(readFile);
+    const date = new Date(frontmatter.date).toLocaleDateString("fr-FR", {
+      day: "numeric",
+      year: "numeric",
+      month: "long",
     });
 
-    posts.push(...localePosts);
-  }
+    return {
+      slug,
+      frontmatter,
+      date,
+    };
+  });
 
   const projectFiles = fs.readdirSync("projects");
   const projects = projectFiles.map((fileName) => {
@@ -202,6 +190,7 @@ export async function getStaticProps({ locale }) {
 
   return {
     props: {
+      locale: currentLocale,
       posts: posts.sort(sortByDate).slice(0, 3),
       allProjects: allProjects,
       ...(await serverSideTranslations(locale)),

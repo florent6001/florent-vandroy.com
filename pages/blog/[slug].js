@@ -32,7 +32,6 @@ export default function PostPage({ frontmatter, content, date }) {
   );
 }
 
-
 export function getStaticPaths() {
   const locales = ["fr", "en"];
   const paths = [];
@@ -59,9 +58,10 @@ export function getStaticPaths() {
 }
 
 export async function getStaticProps({ params: { slug }, locale }) {
-  const fileName = fs.readFileSync(`posts/${locale}/${slug}.md`, "utf-8");
+  const currentLocale = locale == 'en' ? 'en' : 'fr'
+  const fileName = fs.readFileSync(`posts/${currentLocale}/${slug}.md`, "utf-8");
   const { data: frontmatter, content } = matter(fileName);
-  const date = new Date(frontmatter.date).toLocaleDateString(locale, {
+  const date = new Date(frontmatter.date).toLocaleDateString(currentLocale, {
     day: "numeric",
     year: "numeric",
     month: "long",

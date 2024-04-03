@@ -12,10 +12,22 @@ export async function middleware(request) {
   }
 
   if (request.nextUrl.locale === 'default') {
-    const locale = request.cookies.get('NEXT_LOCALE')?.value || 'fr'
-
+    const locale = getPreferredLocale(request.headers.get('user-agent'));
+    // Redirect the user to the URL with the detected locale
     return NextResponse.redirect(
       new URL(`/${locale}${request.nextUrl.pathname}${request.nextUrl.search}`, request.url)
-    )
+    );
   }
+}
+
+function getPreferredLocale(userAgent) {
+  // Extract the language code from the user agent or any other logic
+  // Here, we'll use navigator.language to get the language code from the browser
+  let languageCode = 'en'; // Default to English
+  if (typeof window !== 'undefined' && window.navigator && window.navigator.language) {
+    // Extract the language code from the browser
+    languageCode = window.navigator.language.split('-')[0];
+  }
+  // Return the detected language code
+  return languageCode;
 }
