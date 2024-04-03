@@ -55,12 +55,12 @@ export default function Layout({
         <meta property={"og:locale"} content={router.locale} />
         <meta
           property={"og:url"}
-          content={`https://www.florent-vandroy.fr$locationpath`}
+          content={`https://www.florent-vandroy.com${locationpath}`}
         />
         <meta property={"og:type"} content={"website"} />
         <meta
           property={"og:image"}
-          content={`https://florent-vandroy.fr${background.src}`}
+          content={`https://florent-vandroy.com${background.src}`}
         />
         <meta name={"twitter:card"} content={"summary"} />
         <meta name={"twitter:site"} content={"@Florent_Vandroy"} />
@@ -72,7 +72,7 @@ export default function Layout({
         <meta name={"twitter:description"} content={pageDescription} />
         <meta
           name={"twitter:image"}
-          content={`https://florent-vandroy.fr${background.src}`}
+          content={`https://florent-vandroy.com${background.src}`}
         />
         <meta
           name={"twitter:image:alt"}

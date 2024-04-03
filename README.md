@@ -4,7 +4,7 @@ My personal portfolio as a Junior Developer made with Next.JS
 
 ## Demo
 
-https://florent-vandroy.fr/
+https://florent-vandroy.com/
 
 ## Installation
 
@@ -19,4 +19,4 @@ Install the project with yarn
 
 ## Author
 
-- [Florent Vandroy](https://florent-vandroy.fr/)
+- [Florent Vandroy](https://florent-vandroy.com/)
