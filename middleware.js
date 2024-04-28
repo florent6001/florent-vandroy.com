@@ -11,6 +11,13 @@ export async function middleware(request) {
     return
   }
 
+  if (!request.nextUrl.hostname.startsWith('www.')) {
+    // If not, construct the URL with "www" and redirect
+    const wwwUrl = new URL(request.url);
+    wwwUrl.hostname = `www.${wwwUrl.hostname}`;
+    return NextResponse.redirect(wwwUrl.toString(), { status: 301 });
+  }
+
   if (request.nextUrl.locale === 'default') {
     const locale = getPreferredLocale(request.headers.get('user-agent'));
     // Redirect the user to the URL with the detected locale
