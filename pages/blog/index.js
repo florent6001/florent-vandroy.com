@@ -29,7 +29,12 @@ export default function Blog({ posts }) {
 }
 
 export async function getStaticProps({ locale }) {
-  const currentLocale = locale == 'default' ? 'en' : 'fr'
+  let currentLocale = locale
+
+  if (currentLocale == 'default') {
+    currentLocale = 'en'
+  }
+
   const files = fs.readdirSync(`posts/${currentLocale}`);
 
   const posts = files.map((fileName) => {
