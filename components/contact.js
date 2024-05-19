@@ -111,7 +111,6 @@ export default function Contact() {
             />
             <label htmlFor="message">{t('contact_message')}</label>
             <textarea
-              type="message"
               className="border border-gray-800 w-full rounded p-2 mb-5 mt-2 text-black dark:text-white"
               id="message"
               required
