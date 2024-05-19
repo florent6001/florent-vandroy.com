@@ -29,7 +29,7 @@ export default function Header() {
       return(
         <li className="cursor-pointer">
           <Link href="/" locale="en">
-            <Image src="http://purecatamphetamine.github.io/country-flag-icons/3x2/GB.svg" alt="GB flag" width={35} height={20} />
+            <Image src="https://purecatamphetamine.github.io/country-flag-icons/3x2/GB.svg" alt="GB flag" width={35} height={20} />
           </Link>
         </li>
       )
@@ -37,7 +37,7 @@ export default function Header() {
       return (
         <li className="cursor-pointer">
           <Link href="/" locale="fr">
-            <Image src="http://purecatamphetamine.github.io/country-flag-icons/3x2/FR.svg" alt="French flag" width={35} height={20} />
+            <Image src="https://purecatamphetamine.github.io/country-flag-icons/3x2/FR.svg" alt="French flag" width={35} height={20} />
           </Link>
         </li>
       )
