@@ -12,7 +12,7 @@
   "legal_notice_address": "Adresse : ",
   "legal_notice_email_address": "Adresse email : ",
   "legal_notice_phone_number": "Numéro de téléphone : ",
-  "legal_notice_publication_manager" : "Responsable de la publication : ",
+  "legal_notice_publication_manager": "Responsable de la publication : ",
   "legal_notice_host_provider": "Hébergeur : ",
   "privacy_policy_title": "Politique de confidentialité",
   "privacy_policy_description": "Politique de confidentialité du site www.florent-vandroy.com",
@@ -84,5 +84,6 @@
   "home_skills_title": "Mes compétences",
   "home_skill_text": "Outils avec lesquelles j'ai déjà travaillé.",
   "home_all_my_posts": "Mes articles",
-  "home_see_more_posts": "Voir plus d'articles"
+  "home_see_more_posts": "Voir plus d'articles",
+  "home_watch_all_videos": "Me voir développer"
 }

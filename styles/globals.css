@@ -30,7 +30,12 @@ h6 {
   @apply font-bold py-1;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   @apply py-10;
 }
 
@@ -38,8 +43,7 @@ p {
   @apply pb-5;
 }
 
-p {
-}
+p {}
 
 h1 {
   @apply text-4xl;
@@ -126,7 +130,12 @@ pre {
   animation: bounce 1.2s ease infinite alternate;
 }
 
-@keyframes bounce{
-  from {height: 0px;}
-  to   {height: 50px;}
+@keyframes bounce {
+  from {
+    height: 0px;
+  }
+
+  to {
+    height: 50px;
+  }
 }

@@ -16,6 +16,7 @@ import { AiOutlineArrowDown, AiOutlineSend } from "react-icons/ai";
 import { useTheme } from "next-themes";
 import Skills from "../components/skills";
 import Counter from "../components/counter";
+import Video from "../components/video";
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { useTranslation } from "next-i18next";
@@ -45,6 +46,10 @@ export default function Home({ posts, allProjects, latestProjects, locale }) {
     }
   };
   const { t } = useTranslation();
+  const videos = [
+    "O2WRn7fYO2c",
+    "VASsYqzeWCU"
+  ]
 
   return (
     <Layout>
@@ -132,6 +137,22 @@ export default function Home({ posts, allProjects, latestProjects, locale }) {
         {posts.map((post) => {
           return <Post post={post} key={post.slug} />;
         })}
+      </section>
+      <section id="videos">
+        <h2>{t('home_watch_all_videos')}</h2>
+        <Carousel
+          responsive={responsive}
+          showDots={true}
+          ssr={true}
+          infinite={false}
+          swipeable={true}
+          itemClass="mb-5"
+          removeArrowOnDeviceType={["tablet", "mobile"]}
+        >
+          {videos.map((video, index) => {
+            return <Video video={video} key={index} />;
+          })}
+        </Carousel>
       </section>
       <section id="contact">
         <Contact />
