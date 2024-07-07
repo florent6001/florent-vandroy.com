@@ -11,7 +11,7 @@ https://florent-vandroy.com/
 Install the project with yarn
 
 ```bash
-  git clone https://github.com/florent6001/florent-vandroy.fr
+  git clone https://github.com/florent6001/florent-vandroy.com
   cd florent-vandroy
   npm install
   npm run dev
